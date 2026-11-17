@@ -133,6 +133,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     margin-bottom: 0.25rem;
 }
 
+.product-title a {
+    color: var(--text-dark);
+    transition: color 0.2s ease-in-out;
+}
+
+.product-title a:hover {
+    color: var(--brand-tan);
+}
+
 .product-price {
     font-size: 1rem;
     color: var(--text-dark);

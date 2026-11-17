@@ -11,6 +11,7 @@
     /* Typography */
     --font-heading: 'Lexend', sans-serif;
     --font-body: 'Comfortaa', sans-serif;
+    --font-brand: 'Tilt Neon', sans-serif;
     
     /* Generic Text Colors */
     --text-light: #ffffff;
@@ -28,9 +29,19 @@ body {
     color: var(--text-dark);
 }
 
+/* Explicit Paragraph Formatting */
+p {
+    font-family: var(--font-body);
+}
+
 /* Headings */
-h1, h2, h3, h4, h5, h6, .brand-title {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+}
+
+/* Threaded Brand Fonts */
+.font-threaded, .brand-title {
+    font-family: var(--font-brand);
 }
 
 /* Header & Footer */

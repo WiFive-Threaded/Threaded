@@ -1,23 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lexend:wght@300;400;700&display=swap');
+
 :root {
-    --primary-green: #143621;
-    --bg-beige: #e8e3d6;
-    --product-img-bg: #405247;
+    /* Brand Kit Color Palette */
+    --primary-green: #2C3930;
+    --secondary-green: #3F4F44;
+    --brand-tan: #A27B5C;
+    --bg-beige: #DCD7C9;
+    
+    /* Typography */
+    --font-heading: 'Lexend', sans-serif;
+    --font-body: 'Comfortaa', sans-serif;
+    
+    /* Generic Text Colors */
     --text-light: #ffffff;
     --text-dark: #222222;
-    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset and Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--bg-beige);
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     color: var(--text-dark);
 }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6, .brand-title {
+    font-family: var(--font-heading);
+}
+
+/* Header & Footer */
 .site-header, .site-footer {
     background-color: var(--primary-green);
     color: var(--text-light);
 }
 
+/* Navigation */
 .nav-icon {
     width: 30px;
     height: 30px;
@@ -31,9 +52,20 @@ body {
 }
 
 .site-header a:hover, .site-footer a:hover {
-    color: #cccccc;
+    color: var(--brand-tan);
 }
 
+/* Focus state for accessibility (Assignment requirement) */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--brand-tan);
+    outline-offset: 2px;
+}
+
+.site-header a:focus-visible {
+    outline-color: #ffffff;
+}
+
+/* Hero Section */
 .hero-section {
     background-color: var(--primary-green);
     color: var(--text-light);
@@ -57,6 +89,7 @@ body {
     font-weight: 300;
 }
 
+/* Product Section */
 .product-card {
     background-color: transparent;
     border: none;
@@ -64,18 +97,17 @@ body {
 }
 
 .product-img-placeholder {
-    background-color: var(--product-img-bg);
+    background-color: var(--secondary-green);
     height: 320px;
     width: 100%;
     margin-bottom: 1rem;
-    border: 1px solid #2a3830;
+    border: 1px solid #1a221d;
 }
 
 .product-title {
     font-weight: bold;
     font-size: 1.1rem;
     margin-bottom: 0.25rem;
-    text-decoration: underline;
 }
 
 .product-price {
@@ -83,6 +115,7 @@ body {
     color: var(--text-dark);
 }
 
+/* Footer specific */
 .site-footer {
     padding: 1.5rem 0;
     font-size: 0.85rem;

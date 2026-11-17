@@ -1,8 +1,7 @@
-/* wifivestyle.css */
 :root {
-    --primary-green: #143621;  /* Dark green from the header/footer */
-    --bg-beige: #e8e3d6;       /* Light beige background */
-    --product-img-bg: #405247; /* Slate green for the product image placeholders */
+    --primary-green: #143621;
+    --bg-beige: #e8e3d6;
+    --product-img-bg: #405247;
     --text-light: #ffffff;
     --text-dark: #222222;
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,14 +13,11 @@ body {
     color: var(--text-dark);
 }
 
-/* Header & Footer */
 .site-header, .site-footer {
     background-color: var(--primary-green);
     color: var(--text-light);
-    /* In a real project, you could add the subtle leaf pattern as a background-image here */
 }
 
-/* Navigation */
 .nav-icon {
     width: 30px;
     height: 30px;
@@ -38,7 +34,6 @@ body {
     color: #cccccc;
 }
 
-/* Hero Section */
 .hero-section {
     background-color: var(--primary-green);
     color: var(--text-light);
@@ -62,7 +57,6 @@ body {
     font-weight: 300;
 }
 
-/* Product Section */
 .product-card {
     background-color: transparent;
     border: none;
@@ -89,7 +83,6 @@ body {
     color: var(--text-dark);
 }
 
-/* Footer specific */
 .site-footer {
     padding: 1.5rem 0;
     font-size: 0.85rem;

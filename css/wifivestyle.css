@@ -1,22 +1,18 @@
 
 :root {
-    /* Brand Kit Color Palette */
     --primary-green: #2C3930;
     --secondary-green: #3F4F44;
     --brand-tan: #A27B5C;
     --bg-beige: #DCD7C9;
     
-    /* Typography */
     --font-heading: 'Lexend', sans-serif;
     --font-body: 'Comfortaa', sans-serif;
     --font-logo: 'Tilt Neon', sans-serif;
     
-    /* Generic Text Colors */
     --text-light: #ffffff;
     --text-dark: #222222;
 }
 
-/* Reset and Base Styles */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -27,7 +23,6 @@ body {
     color: var(--text-dark);
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6, {
     font-family: var(--font-heading);
 }
@@ -43,13 +38,12 @@ h1, h2, h3, h4, h5, h6, {
     margin-bottom: 0;
 }
 
-/* Header & Footer */
 .site-header, .site-footer {
     background-color: var(--primary-green);
     color: var(--text-light);
 }
 
-/* Navigation */
+
 .nav-icon {
     width: 30px;
     height: 30px;
@@ -66,7 +60,7 @@ h1, h2, h3, h4, h5, h6, {
     color: var(--brand-tan);
 }
 
-/* Focus state for accessibility (Assignment requirement) */
+
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
     outline: 3px solid var(--brand-tan);
     outline-offset: 2px;
@@ -76,7 +70,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     outline-color: #ffffff;
 }
 
-/* Hero Section */
+
 .hero-section {
     background-color: var(--primary-green);
     color: var(--text-light);
@@ -100,7 +94,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     font-weight: 300;
 }
 
-/* Product Section */
+
 .product-card {
     background-color: transparent;
     border: none;
@@ -126,7 +120,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     color: var(--text-dark);
 }
 
-/* Footer specific */
+
 .site-footer {
     padding: 1.5rem 0;
     font-size: 0.85rem;

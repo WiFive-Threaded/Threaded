@@ -5,89 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Threaded - Home</title>
 
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/wifivestyle.css">
   </head>
-<body>
+  <body>
 
-    <header>
-        <div class="logo">
-            <img src="ThreadedLogo-SimpleLight.png" alt="Threaded Logo Simple Light">
-            <span>Threaded</span>
+    <header class="site-header py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo d-flex align-items-center">
+                <img src="ThreadedLogo-SimpleLight.png" alt="Threaded Logo Simple Light" class="me-2" style="height: 40px;">
+                <span class="fs-4 fw-bold">Threaded</span>
+            </div>
+            <nav>
+                <ul class="d-flex gap-4 list-unstyled mb-0 text-center">
+                    <li>
+                        <a href="homepage.html" class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="images/home-icon.png" alt="" aria-hidden="true" class="nav-icon">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="shoppage.html" class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="images/shop-icon.png" alt="" aria-hidden="true" class="nav-icon">
+                            Shop
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="images/contact-icon.png" alt="" aria-hidden="true" class="nav-icon">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="homepage.html">
-                        <img src="images/home-icon.png" alt="" aria-hidden="true">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="shoppage.html">
-                        <img src="images/shop-icon.png" alt="" aria-hidden="true">
-                        Shop
-                    </a>
-                </li>
-                <li>
-                    <a href="contact.html">
-                        <img src="images/contact-icon.png" alt="" aria-hidden="true">
-                        Contact
-                    </a>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-brand">
-                <img src="images/threaded-logo-large.png" alt="Large Threaded Logo">
-                <div class="brand-text">
-                    <h1>Threaded</h1>
-                    <p>Woven to your comfort and style.</p>
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7 d-flex align-items-center">
+                        <img src="images/threaded-logo-large.png" alt="Large Threaded Logo" class="me-3" style="max-height: 80px;">
+                        <div class="brand-text">
+                            <h1 class="brand-title">Threaded</h1>
+                            <p class="brand-tagline">Woven to your comfort and style.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-5 mt-4 mt-md-0">
+                        <h2 class="h4 fw-bold">About Us</h2>
+                        <p class="about-text">We are a small business here to provide quality and comfortable shirts designed to fit different lifestyles and personal styles through simple, everyday clothing.</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="hero-about">
-                <h2>About Us</h2>
-                <p>We are a small business here to provide quality and comfortable shirts designed to fit different lifestyles and personal styles through simple, everyday clothing.</p>
             </div>
         </section>
 
-        <section class="products">
-            <article class="product-card">
-                <img src="images/dont-be-late-tee.png" alt="Don't Be Late Tee product view">
-                <h3>Don't Be Late Tee</h3>
-                <p>₱499</p>
-            </article>
+        <section class="products container py-5">
+            <div class="row g-4">
+                <article class="col-md-4">
+                    <div class="product-card">
+                        <img src="images/dont-be-late-tee.png" alt="Don't Be Late Tee product view" class="product-img-placeholder img-fluid object-fit-cover w-100">
+                        <h3 class="product-title mt-3">Don't Be Late Tee</h3>
+                        <p class="product-price">₱499</p>
+                    </div>
+                </article>
 
-            <article class="product-card">
-                <img src="images/everyday-comfort-tee.png" alt="Everyday Comfort Tee product view">
-                <h3>Everyday Comfort Tee</h3>
-                <p>₱499</p>
-            </article>
+                <article class="col-md-4">
+                    <div class="product-card">
+                        <img src="images/everyday-comfort-tee.png" alt="Everyday Comfort Tee product view" class="product-img-placeholder img-fluid object-fit-cover w-100">
+                        <h3 class="product-title mt-3">Everyday Comfort Tee</h3>
+                        <p class="product-price">₱499</p>
+                    </div>
+                </article>
 
-            <article class="product-card">
-                <img src="images/do-good-work-tee.png" alt="Do Good Work Tee product view">
-                <h3>Do Good Work Tee</h3>
-                <p>₱499</p>
-            </article>
+                <article class="col-md-4">
+                    <div class="product-card">
+                        <img src="images/do-good-work-tee.png" alt="Do Good Work Tee product view" class="product-img-placeholder img-fluid object-fit-cover w-100">
+                        <h3 class="product-title mt-3">Do Good Work Tee</h3>
+                        <p class="product-price">₱499</p>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 
-
-    <footer>
-        <p>&copy; 2026 THREADED All Rights Reserved</p>
-        <div class="footer-links">
-            <a href="privacy-policy.html"><img src="images/check-icon.png" alt="" aria-hidden="true"> Privacy Policy</a>
-            <a href="terms.html"><img src="images/check-icon.png" alt="" aria-hidden="true"> Terms and Condition</a>
-        </div>
-    </footer>
-
-</body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
-
+    <footer

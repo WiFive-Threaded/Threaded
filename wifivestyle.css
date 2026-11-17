@@ -1,0 +1,97 @@
+/* wifivestyle.css */
+:root {
+    --primary-green: #143621;  /* Dark green from the header/footer */
+    --bg-beige: #e8e3d6;       /* Light beige background */
+    --product-img-bg: #405247; /* Slate green for the product image placeholders */
+    --text-light: #ffffff;
+    --text-dark: #222222;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-beige);
+    font-family: var(--font-main);
+    color: var(--text-dark);
+}
+
+/* Header & Footer */
+.site-header, .site-footer {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    /* In a real project, you could add the subtle leaf pattern as a background-image here */
+}
+
+/* Navigation */
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.site-header a, .site-footer a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.site-header a:hover, .site-footer a:hover {
+    color: #cccccc;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    padding: 3rem 0;
+}
+
+.brand-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.brand-tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.about-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* Product Section */
+.product-card {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
+.product-img-placeholder {
+    background-color: var(--product-img-bg);
+    height: 320px;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #2a3830;
+}
+
+.product-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    text-decoration: underline;
+}
+
+.product-price {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* Footer specific */
+.site-footer {
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+    border-top: 2px solid #000;
+}

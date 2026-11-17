@@ -120,11 +120,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .product-img-placeholder {
-    background-color: var(--secondary-green);
+    background-color: var(--primary-green);
     height: 320px;
     width: 100%;
     margin-bottom: 1rem;
-    border: 1px solid #1a221d;
+    border: 3px solid var(--brand-tan);
 }
 
 .product-title {

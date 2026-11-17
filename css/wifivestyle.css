@@ -180,6 +180,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     color: #DCD7C9;
 }
 
+.footer-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
 @media (max-width: 768px) {
     .hero-section {
         height: auto ; 

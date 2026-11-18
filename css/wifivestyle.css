@@ -134,7 +134,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     background-color: transparent;
     border: none;
     text-align: center;
-    width: 339px; 
+    width: 100%;
     height: auto;
     margin: 0 auto;
 }

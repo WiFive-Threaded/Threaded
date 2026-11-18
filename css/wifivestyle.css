@@ -134,7 +134,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .hero-section h2 {
     font-size: 36px;
-    color: #DCD7C9;
+    color: #DCD7C9 !important;
 }
 
 .about-text {

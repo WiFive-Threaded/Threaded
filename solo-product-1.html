@@ -507,7 +507,7 @@
 
                     <!-- main display -->
                     <div class="main-product-image-box shadow-sm">
-                        <img id="mainProductImage" src="img/DontBeLate-white-tee.png" alt="Don't Be Late Tee in White">
+                        <img id="mainProductImage" src="img/DontBeLate-white-tee" alt="Don't Be Late Tee in White">
                     </div>
                 </div>
 
@@ -523,16 +523,16 @@
                     <div class="mb-3">
                         <span class="option-label">Color</span>
                         <div class="color-options">
-                            <input type="radio" name="color" id="color-white" value="White" data-image="img/DontBeLate-white-tee.png" checked>
+                            <input type="radio" name="color" id="color-white" value="White" data-image="img/DontBeLate-white-tee" checked>
                             <label for="color-white" class="color-swatch white-swatch" title="White"><span class="visually-hidden">White</span></label>
 
-                            <input type="radio" name="color" id="color-black" value="Black" data-image="img/DontBeLate-black-tee.png">
+                            <input type="radio" name="color" id="color-black" value="Black" data-image="img/DontBeLate-black-tee">
                             <label for="color-black" class="color-swatch black-swatch" title="Black"><span class="visually-hidden">Black</span></label>
 
-                            <input type="radio" name="color" id="color-gray" value="Gray" data-image="img/DontBeLate-gray-tee.png">
+                            <input type="radio" name="color" id="color-gray" value="Gray" data-image="img/DontBeLate-gray-tee">
                             <label for="color-gray" class="color-swatch gray-swatch" title="Gray"><span class="visually-hidden">Gray</span></label>
 
-                            <input type="radio" name="color" id="color-beige" value="Beige" data-image="img/DontBeLate-beige-tee.png">
+                            <input type="radio" name="color" id="color-beige" value="Beige" data-image="img/DontBeLate-beige-tee">
                             <label for="color-beige" class="color-swatch beige-swatch" title="Beige"><span class="visually-hidden">Beige</span></label>
                         </div>
                     </div>
@@ -729,7 +729,7 @@
 
                     orderButton.textContent = "ADDED!";
                     orderButton.style.backgroundColor = "var(--product-green)";
-                    orderFeedback.textContent = `Success! qtyxDon'tBeLateTee({selectedColor}, Size: ${selectedSize}) added to your cart.`;
+                    orderFeedback.textContent = `Success! ${qty}x Don't Be Late Tee (${selectedColor}, Size: ${selectedSize}) added to your cart.`;
 
                     setTimeout(() => {
                         orderButton.textContent = "ORDER NOW";
@@ -742,5 +742,3 @@
 </body>
 
 </html>
-
-

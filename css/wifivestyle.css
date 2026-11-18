@@ -74,11 +74,12 @@ main {
 .site-footer {
     background-image: url('../img/headerfooter-bg.jpg');
     margin-top: auto;
-    height: 70px;
+    height: auto; 
+    min-height: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0;
+    padding: 1.5rem 0;
 }
 
 .nav-icon {

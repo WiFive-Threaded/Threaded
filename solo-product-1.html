@@ -1,0 +1,746 @@
+ <!-- THREADED - solo product page html-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Threaded - Solo Product</title>
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lexend:wght@300;400;700&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap" rel="stylesheet">
+
+    <!-- embedded solo product css -->
+    <style>
+        :root {
+            --product-dark: #2C3930;
+            --product-green: #3F4F44;
+            --product-brown: #A27B5C;
+            --product-beige: #DCD7C9;
+            --product-gray: #C5C5C5;
+            --product-white: #F5F2EB;
+        }
+
+        body.product-page {
+            background-color: var(--product-beige) !important;
+            color: var(--product-dark) !important;
+            font-family: 'Comfortaa', sans-serif !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .product-page h1, 
+        .product-page h2, 
+        .product-page h3, 
+        .product-page h4, 
+        .product-page h5, 
+        .product-page h6 {
+            font-family: 'Lexend', sans-serif !important;
+        }
+
+        /* Header with repeating pattern (No Gradient Overlay) */
+        .product-page .site-header {
+            background-color: rgba(44, 57, 48, 0.85) !important;
+            background-image: url('headerfooter-bg.jpg') !important;
+            background-repeat: repeat !important;
+            background-position: center center !important;
+            color: var(--product-beige) !important;
+            padding: 15px 0;
+        }
+
+        .product-page .site-header .logo-text,
+        .product-page .site-header nav a {
+            color: var(--product-beige) !important;
+            text-decoration: none;
+        }
+
+        .product-page .site-header nav a:hover {
+            color: var(--product-brown) !important;
+        }
+
+        .product-page .nav-icon {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        /* Product Main Layout */
+        .product-page .product-section {
+            padding: 40px 0;
+        }
+
+        .product-page .product-layout-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 40px;
+            align-items: start;
+            width: 100%;
+        }
+
+        .product-page .gallery-layout-grid {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 16px;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .product-page .product-details-box {
+            width: 100%;
+        }
+
+        /* Thumbnails Column */
+        .product-page .thumbnail-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .product-page .thumbnail-button {
+            width: 100%;
+            height: calc((460px - 36px) / 4);
+            max-width: 90px;
+            padding: 4px;
+            border: 2px solid transparent;
+            background-color: var(--product-white);
+            cursor: pointer;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .product-page .thumbnail-button.active,
+        .product-page .thumbnail-button:hover {
+            border-color: var(--product-brown);
+        }
+
+        .product-page .thumbnail-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Main Image Display Box */
+        .product-page .main-product-image-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 460px;
+            background: linear-gradient(rgba(63, 79, 68, 0.9), rgba(63, 79, 68, 0.9)), url('herosection-bg.jpg') no-repeat center center !important;
+            background-size: cover !important;
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .product-page .main-product-image-box img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        /* Product Details Info */
+        .product-page .product-heading {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--product-dark);
+            margin-bottom: 5px;
+        }
+
+        .product-page .product-cost {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--product-dark);
+            margin-bottom: 15px;
+        }
+
+        .product-page .product-description {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--product-dark);
+            margin-bottom: 25px;
+        }
+
+        /* Options */
+        .product-page .option-label {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: var(--product-dark);
+            display: block;
+        }
+
+        /* Color Swatches (Forced Square Layout with #2c3930 Active State) */
+        .product-page .color-options {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .product-page .color-options input[type="radio"] {
+            display: none;
+        }
+
+        .product-page .color-options label.color-swatch {
+            display: inline-block !important;
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            border: 2px solid #888 !important;
+            transition: transform 0.2s ease, outline 0.2s ease, border-color 0.2s ease !important;
+        }
+
+        .product-page .white-swatch { background-color: #FFFFFF !important; }
+        .product-page .black-swatch { background-color: #171717 !important; }
+        .product-page .gray-swatch  { background-color: #999999 !important; }
+        .product-page .beige-swatch { background-color: #E9DDD0 !important; }
+
+        .product-page .color-options input[type="radio"]:checked + .color-swatch {
+            outline: 3px solid #2c3930 !important;
+            outline-offset: 3px !important;
+            border-color: #2c3930 !important;
+            transform: scale(1.12) !important;
+            border-radius: 4px !important;
+        }
+
+        /* Size Selector */
+        .product-page .size-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-page .size-radio {
+            display: none;
+        }
+
+        .product-page .size-options label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background-color: var(--product-gray);
+            color: var(--product-dark);
+            border: 1px solid #888;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .product-page .size-options label:hover {
+            background-color: var(--product-brown);
+            color: #FFF;
+        }
+
+        .product-page .size-radio:checked + label {
+            background-color: var(--product-dark);
+            color: #FFF;
+            border-color: var(--product-dark);
+        }
+
+        .product-page .size-chart-link {
+            background: none;
+            border: none;
+            padding: 0;
+            color: var(--product-dark);
+            text-decoration: underline;
+            font-size: 13px;
+            cursor: pointer;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .product-page .size-chart-link:hover {
+            color: var(--product-brown);
+        }
+
+        /* Quantity & Order Row */
+        .product-page .quantity-order-row {
+            display: flex;
+            gap: 12px;
+            align-items: stretch;
+            margin-bottom: 10px;
+        }
+
+        .product-page .quantity-control {
+            display: flex;
+            width: 140px;
+            height: 48px;
+            background-color: #FFF;
+            border: 1px solid var(--product-brown);
+        }
+
+        .product-page .quantity-control button {
+            flex: 0 0 40px;
+            background: #FFF;
+            border: none;
+            color: var(--product-brown);
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .product-page .quantity-control button:hover {
+            background-color: var(--product-beige);
+        }
+
+        .product-page .quantity-control input {
+            flex: 1;
+            border: none;
+            text-align: center;
+            font-size: 15px;
+            outline: none;
+            background: transparent;
+        }
+
+        .product-page .order-button {
+            flex: 1;
+            height: 48px;
+            background-color: var(--product-brown);
+            border: none;
+            color: #FFF;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .product-page .order-button:hover {
+            background-color: var(--product-dark);
+        }
+
+        .product-page .order-feedback {
+            font-size: 13px;
+            font-weight: 600;
+            min-height: 20px;
+            color: var(--product-green);
+            margin-top: 5px;
+        }
+
+        /* Shop for more */
+        .product-page .shop-more-section {
+            padding: 40px 0;
+            background-color: var(--product-gray);
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        .product-page .shop-more-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--product-dark);
+        }
+
+        .product-page .related-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 24px;
+        }
+
+        .product-page .related-product-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--product-dark);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .product-page .related-product-image {
+            width: 100%;
+            max-width: 180px;
+            height: 160px;
+            object-fit: cover;
+            border: 1px solid var(--product-dark);
+            background-color: #E9DDD0;
+        }
+
+        /* Size Chart Modal */
+        .product-page .size-modal {
+            background-color: var(--product-beige);
+            color: var(--product-dark);
+        }
+
+        .product-page .size-modal .modal-header {
+            border-bottom: 1px solid var(--product-brown);
+        }
+
+        .product-page .size-modal .table th {
+            background-color: var(--product-green);
+            color: #FFF;
+        }
+
+        .product-page .size-modal .table td {
+            background-color: var(--product-white);
+        }
+
+        /* Footer with repeating pattern (No Gradient Overlay) */
+        /* Footer with exact same repeating pattern as the header */
+.product-page .site-footer {
+    background-color: rgba(44, 57, 48, 0.85) !important;
+    background-image: url('headerfooter-bg.jpg') !important; /* Update to url('../headerfooter-bg.jpg') if your CSS is in a separate folder */
+    background-repeat: repeat !important;
+    background-position: center center !important;
+    color: var(--product-beige) !important;
+    padding: 25px 0;
+    margin-top: 50px;
+
+        }
+
+        .product-page .site-footer p, 
+        .product-page .site-footer a {
+            color: var(--product-beige) !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .product-page .site-footer a:hover {
+            color: var(--product-brown) !important;
+        }
+
+        .product-page .footer-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 991.98px) {
+            .product-page .product-layout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-page .gallery-layout-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-page .thumbnail-list {
+                flex-direction: row;
+                justify-content: center;
+                gap: 8px;
+                height: auto;
+            }
+            .product-page .thumbnail-button {
+                height: 65px;
+                max-width: 65px;
+            }
+            .product-page .main-product-image-box {
+                height: 350px;
+            }
+            .product-page .quantity-order-row {
+                flex-direction: column;
+            }
+            .product-page .quantity-control {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="product-page">
+
+    <!-- header -->
+    <header class="site-header py-3">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div class="logo d-flex align-items-center">
+                <img src="ThreadedLogo-SimpleLight.png" alt="Threaded Logo" class="me-2" style="width: 65px; height: 65px; object-fit: contain;">
+                <span class="logo-text fs-4" style="font-family: 'Tilt Neon', sans-serif; font-variation-settings: 'XROT' 13, 'YROT' 45;">Threaded</span>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul class="d-flex gap-3 gap-md-4 list-unstyled mb-0 text-center">
+                    <li>
+                        <a href="index.html" class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="home-icon-light.png" alt="" class="nav-icon">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="shoppage.html" class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="shop-icon-light.png" alt="" class="nav-icon">
+                            Shop
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="Contact-icon-light.png" alt="" class="nav-icon">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- main content -->
+    <main class="product-section">
+        <div class="container">
+            <div class="product-layout-grid">
+
+                <!-- the left column gallery -->
+                <div class="gallery-layout-grid">
+                    <!-- thumbnails -->
+                    <div class="thumbnail-list">
+                        <button type="button" class="thumbnail-button active" data-image="white tee.png" data-alt="Don't Be Late Tee in White" aria-label="View white shirt">
+                            <img src="DontBeLate-white-tee.png" alt="White Tee thumbnail">
+                        </button>
+                        <button type="button" class="thumbnail-button" data-image="black tee.png" data-alt="Don't Be Late Tee in Black" aria-label="View black shirt">
+                            <img src="DontBeLate-black-tee.png" alt="Black Tee thumbnail">
+                        </button>
+                        <button type="button" class="thumbnail-button" data-image="gray tee.png" data-alt="Don't Be Late Tee in Gray" aria-label="View gray shirt">
+                            <img src="DontBeLate-gray-tee.png" alt="Gray Tee thumbnail">
+                        </button>
+                        <button type="button" class="thumbnail-button" data-image="beige tee.png" data-alt="Don't Be Late Tee in Beige" aria-label="View beige shirt">
+                            <img src="DontBeLate-beige-tee.png" alt="Beige Tee thumbnail">
+                        </button>
+                    </div>
+
+                    <!-- main display -->
+                    <div class="main-product-image-box shadow-sm">
+                        <img id="mainProductImage" src="DontBeLate-white-tee.png" alt="Don't Be Late Tee in White">
+                    </div>
+                </div>
+
+                <!-- right cloumn that displays product details -->
+                <div class="product-details-box">
+                    <h1 class="product-heading">Don't Be Late Tee</h1>
+                    <p class="product-cost">PHP 499</p>
+                    <p class="product-description">
+                        A statement piece that blends simplicity with everyday comfort and effortless styling. The Don't Be Late Tee's imaginative, simple design is inspired by giving value to time and the constant reminder to stay on top of things.
+                    </p>
+
+                    <!-- square shaped swatches for color selection -->
+                    <div class="mb-3">
+                        <span class="option-label">Color</span>
+                        <div class="color-options">
+                            <input type="radio" name="color" id="color-white" value="White" data-image="DontBeLate-white-tee.png" checked>
+                            <label for="color-white" class="color-swatch white-swatch" title="White"><span class="visually-hidden">White</span></label>
+
+                            <input type="radio" name="color" id="color-black" value="Black" data-image="DontBeLate-black-tee.png">
+                            <label for="color-black" class="color-swatch black-swatch" title="Black"><span class="visually-hidden">Black</span></label>
+
+                            <input type="radio" name="color" id="color-gray" value="Gray" data-image="DontBeLate-gray-tee.png">
+                            <label for="color-gray" class="color-swatch gray-swatch" title="Gray"><span class="visually-hidden">Gray</span></label>
+
+                            <input type="radio" name="color" id="color-beige" value="Beige" data-image="DontBeLate-beige-tee.png">
+                            <label for="color-beige" class="color-swatch beige-swatch" title="Beige"><span class="visually-hidden">Beige</span></label>
+                        </div>
+                    </div>
+
+                    <!-- SIZE SELECTION -->
+                    <div class="mb-2">
+                        <span class="option-label">Size</span>
+                        <div class="size-options">
+                            <input type="radio" name="size" id="size-xxs" value="XXS" class="size-radio"><label for="size-xxs">XXS</label>
+                            <input type="radio" name="size" id="size-xs" value="XS" class="size-radio"><label for="size-xs">XS</label>
+                            <input type="radio" name="size" id="size-s" value="S" class="size-radio" checked><label for="size-s">S</label>
+                            <input type="radio" name="size" id="size-m" value="M" class="size-radio"><label for="size-m">M</label>
+                            <input type="radio" name="size" id="size-l" value="L" class="size-radio"><label for="size-l">L</label>
+                            <input type="radio" name="size" id="size-xl" value="XL" class="size-radio"><label for="size-xl">XL</label>
+                            <input type="radio" name="size" id="size-xxl" value="XXL" class="size-radio"><label for="size-xxl">XXL</label>
+                        </div>
+                        <button type="button" class="size-chart-link" data-bs-toggle="modal" data-bs-target="#sizeChartModal">View Size Chart</button>
+                    </div>
+
+                    <!-- quantity and order row -->
+                    <div>
+                        <label for="quantity" class="option-label">Quantity</label>
+                        <div class="quantity-order-row">
+                            <div class="quantity-control">
+                                <button type="button" id="decreaseQuantity" aria-label="Decrease quantity">−</button>
+                                <input type="number" id="quantity" value="1" min="1" max="99" step="1" aria-label="Quantity">
+                                <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
+                            </div>
+                            <button type="button" id="orderButton" class="order-button">ORDER NOW</button>
+                        </div>
+                        <p id="orderFeedback" class="order-feedback" role="status" aria-live="polite"></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- shop for more selection option -->
+            <section class="shop-more-section px-4">
+                <div class="container">
+                    <h2 class="shop-more-title">SHOP FOR MORE</h2>
+                    <div class="related-products-grid">
+                        <a href="shoppage.html" class="related-product-link">
+                            <img src="everyday-comfort-tee.png" alt="Everyday Comfort Tee" class="related-product-image">
+                            <span>Everyday Comfort Tee</span>
+                        </a>
+                        <a href="shoppage.html" class="related-product-link">
+                            <img src="good-work-tee.png" alt="Do Good Work Tee" class="related-product-image">
+                            <span>Do Good Work Tee</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- the size chart modal -->
+    <div class="modal fade" id="sizeChartModal" tabindex="-1" aria-labelledby="sizeChartTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content size-modal">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="sizeChartTitle">Don't Be Late Tee – Size Chart</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Please refer to the official shirt measurements before choosing your size.</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Size</th>
+                                    <th scope="col">Measurement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th scope="row">XXS</th><td>To be confirmed</td></tr>
+                                <tr><th scope="row">XS</th><td>To be confirmed</td></tr>
+                                <tr><th scope="row">S</th><td>To be confirmed</td></tr>
+                                <tr><th scope="row">M</th><td>To be confirmed</td></tr>
+                                <tr><th scope="row">L</th><td>To be confirmed</td></tr>
+                                <tr><th scope="row">XL</th><td>To be confirmed</td></tr>
+                                <tr><th scope="row">XXL</th><td>To be confirmed</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="site-footer text-center">
+        <div class="container">
+            <p class="mb-1">©2026 THREADED All Rights Reserved</p>
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+                <a href="privacy.html" class="d-inline-flex align-items-center">
+                    <img src="privacypolicy-icon-light.png" alt="" class="footer-icon me-1"> Privacy Policy
+                </a>
+                <a href="terms.html" class="d-inline-flex align-items-center">
+                    <img src="termsandcondition-icon-light.png" alt="" class="footer-icon me-1"> Terms and Condition
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- product interactivity java script-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainImage = document.getElementById('mainProductImage');
+            const thumbnailButtons = document.querySelectorAll('.thumbnail-button');
+            const colorRadios = document.querySelectorAll('input[name="color"]');
+            
+            const decreaseBtn = document.getElementById('decreaseQuantity');
+            const increaseBtn = document.getElementById('increaseQuantity');
+            const quantityInput = document.getElementById('quantity');
+            const orderButton = document.getElementById('orderButton');
+            const orderFeedback = document.getElementById('orderFeedback');
+
+            if (!mainImage) return;
+
+            function updateProductDisplay(imageSrc, altText, selectedColorName) {
+                mainImage.style.opacity = '0.4';
+                setTimeout(() => {
+                    mainImage.src = imageSrc;
+                    mainImage.alt = altText;
+                    mainImage.style.opacity = '1';
+                }, 120);
+
+                thumbnailButtons.forEach(btn => {
+                    const btnImage = btn.getAttribute('data-image');
+                    if (btnImage === imageSrc || btnImage.trim() === imageSrc.trim()) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                if (selectedColorName) {
+                    const matchingRadio = document.querySelector(`input[name="color"][value="${selectedColorName}"]`);
+                    if (matchingRadio) matchingRadio.checked = true;
+                }
+            }
+
+            thumbnailButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const img = this.getAttribute('data-image');
+                    const alt = this.getAttribute('data-alt') || "Product Image";
+                    
+                    let colorName = 'White';
+                    const lowerImg = img.toLowerCase();
+                    if (lowerImg.includes('black')) colorName = 'Black';
+                    else if (lowerImg.includes('gray')) colorName = 'Gray';
+                    else if (lowerImg.includes('beige')) colorName = 'Beige';
+
+                    updateProductDisplay(img, alt, colorName);
+                });
+            });
+
+            colorRadios.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    if (this.checked) {
+                        const img = this.getAttribute('data-image');
+                        const colorValue = this.value;
+                        const alt = `Don't Be Late Tee in ${colorValue}`;
+                        updateProductDisplay(img, alt, null);
+                    }
+                });
+            });
+
+            if (decreaseBtn && quantityInput) {
+                decreaseBtn.addEventListener('click', function () {
+                    let currentValue = parseInt(quantityInput.value) || 1;
+                    if (currentValue > 1) quantityInput.value = currentValue - 1;
+                });
+            }
+
+            if (increaseBtn && quantityInput) {
+                increaseBtn.addEventListener('click', function () {
+                    let currentValue = parseInt(quantityInput.value) || 1;
+                    if (currentValue < 99) quantityInput.value = currentValue + 1;
+                });
+            }
+
+            if (orderButton && quantityInput && orderFeedback) {
+                orderButton.addEventListener('click', function () {
+                    const selectedColorRadio = document.querySelector('input[name="color"]:checked');
+                    const selectedSizeRadio = document.querySelector('input[name="size"]:checked');
+                    
+                    const selectedColor = selectedColorRadio ? selectedColorRadio.value : 'Default';
+                    const selectedSize = selectedSizeRadio ? selectedSizeRadio.value : 'S';
+                    const qty = quantityInput.value;
+
+                    orderButton.textContent = "ADDED!";
+                    orderButton.style.backgroundColor = "var(--product-green)";
+                    orderFeedback.textContent = `Success! ${qty}x Don't Be Late Tee (${selectedColor}, Size: ${selectedSize}) added to your cart.`;
+
+                    setTimeout(() => {
+                        orderButton.textContent = "ORDER NOW";
+                        orderButton.style.backgroundColor = "";
+                    }, 2500);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

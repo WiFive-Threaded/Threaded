@@ -4,16 +4,47 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Threaded - Privacy Policy</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lexend:wght@300;400;700&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap"
         rel="stylesheet">
-	<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/wifivestyle.css">
     <link rel="stylesheet" href="css/privacy.css">
+</head>
+
+<body class="privacy-page">
+
+
+
+2. Fix your Contact navigation section
+Remove the two CSS links currently inside your Contact link. That section should look like this:
+
+<li>
+    <a href="contact.html" class="d-flex flex-column align-items-center text-decoration-none">
+        <img src="img/Contact-icon-light.png" alt="Navigate to Contact Us" class="nav-icon">
+        Contact
+    </a>
+</li>
+
+
+
+3. Keep the rest of your HTML
+Your main Privacy Policy content and footer can remain as they are. You don't need to rewrite them.
+4. Why this matters for GitHub
+When you upload the page, make sure you upload the supporting folders too:
+- privacy.html
+- css/wifivestyle.css
+- css/privacy.css
+- img/ and its required images
+Important: If you download only privacy.html from GitHub, the CSS and images won't automatically come with it. Keep the HTML file inside the main Threaded folder so its relative paths still work.
+
+After fixing the opening tags, test the page locally first. Then upload the corrected file and supporting assets to GitHub.>
 </head>
 
 <body class="privacy-page">
@@ -44,8 +75,6 @@
                         <a href="contact.html" class="d-flex flex-column align-items-center text-decoration-none">
                             <img src="img/Contact-icon-light.png" alt="Navigate to Contact Us" class="nav-icon">
                             Contact
-							<link rel="stylesheet" href="./css/wifivestyle.css">
-                            <link rel="stylesheet" href="./css/privacy.css">
                         </a>
                     </li>
                 </ul>

@@ -1,503 +1,443 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Threaded - Privacy Policy</title>
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lexend:wght@300;400;700&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/wifivestyle.css">
-    <link rel="stylesheet" href="css/privacy.css">
-
     <style>
-        
-:root {
-    --primary-green: #2C3930;
-    --secondary-green: #3F4F44;
-    --brand-tan: #A27B5C;
-    --bg-beige: #DCD7C9;
-
-    --font-heading: 'Lexend', sans-serif;
-    --font-body: 'Comfortaa', sans-serif;
-    --font-logo: 'Tilt Neon', sans-serif;
-}
-
-
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-body {
-    background-color: var(--bg-beige);
-    font-family: var(--font-body);
-    color: #2C3930;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    color: #2C3930;
-}
-
-a {
-    color: #2C3930; 
-}
-
-
-.brand-title, 
-.logo-text {
-    font-family: var(--font-logo);
-    font-weight: 400;
-    font-variation-settings: 'XROT' 13, 'YROT' 45;
-    color: #DCD7C9;
-}
-
-.logo-text {
-    font-size: 32px;
-}
-
-.brand-title {
-    font-size: 96px;
-    margin-bottom: 0;
-}
-
-.brand-tagline {
-    font-size: 24px;
-    font-weight: 300;
-}
-
-.about-text {
-    font-size: 20px;
-    line-height: 1.5;
-    font-weight: 300;
-}
-
-
-.site-header {
-    background-image: url('../img/headerfooter-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #DCD7C9;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-}
-
-.hero-section {
-    background-image: url('../img/herosection-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #DCD7C9;
-    width: auto;
-    min-height: 201px; 
-    height: auto;
-    padding: 40px 0;
-    margin: 25px auto 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.hero-section h2 {
-    font-size: 36px;
-    color: #DCD7C9 !important;
-}
-
-.site-footer {
-    background-image: url('../img/headerfooter-bg.jpg');
-    margin-top: auto;
-    height: auto; 
-    min-height: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1.5rem 0;
-    font-size: 15px;
-}
-
-.site-footer p {
-    color: #DCD7C9;
-}
-
-
-.nav-icon {
-    width: 50px;
-    height: 50px; 
-    margin-bottom: 5px;
-    object-fit: contain;
-}
-
-.footer-icon {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-}
-
-.site-header a {
-    color: #DCD7C9;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.site-footer a {
-    color: #DCD7C9;
-    text-decoration: none;
-}
-
-
-.product-card {
-    background-color: transparent;
-    border: none;
-    text-align: center;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
-
-.product-img-placeholder {
-    background-color: var(--secondary-green);
-    width: 100%;
-    height: auto;          
-    aspect-ratio: 3 / 4;   
-    object-fit: cover;     
-    margin-bottom: 1rem;
-    border: 3px solid var(--brand-tan);
-}
-
-.product-title {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 0.25rem;
-}
-
-.product-title a {
-    color: #2C3930;
-    text-decoration: underline !important;
-    text-underline-offset: 4px;
-    transition: color 0.2s ease-in-out;
-}
-
-.product-price {
-    font-size: 20px;
-    color: #2C3930;
-}
-
-
-.site-header a:hover, 
-.site-footer a:hover,
-.product-title a:hover {
-    color: var(--brand-tan);
-}
-
-a:focus-visible, 
-button:focus-visible, 
-input:focus-visible, 
-textarea:focus-visible {
-    outline: 3px solid var(--brand-tan);
-    outline-offset: 2px;
-}
-
-.site-header a:focus-visible, 
-.site-footer a:focus-visible {
-    outline-color: var(--brand-tan); 
-}
-
-
-@media (max-width: 991px) {
-    .brand-title {
-        font-size: 56px;
-    }
-    
-    .hero-section h2 {
-        font-size: 28px;
-    }
-    
-    .brand-tagline {
-        font-size: 18px;
-    }
-    
-    .about-text {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    .site-header {
-        height: 80px;
-        padding: 0;
-    }
-
-    .site-header .container {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        padding: 0 10px;
-    }
-
-    .site-header .logo img {
-        width: 45px; 
-        height: 45px;
-    }
-    
-    .site-header .logo-text {
-        font-size: 1.2rem; 
-    }
-
-    .site-header nav ul {
-        gap: 10px;
-    }
-
-    .nav-icon {
-        width: 25px;
-        height: 25px;
-    }
-
-    .site-header a {
-        font-size: 0.7rem;
-    }
-
-    .hero-section {
-        height: auto; 
-        padding: 40px 15px; 
-    }
-    
-    .hero-section .col-md-7 {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-    }
-
-    .hero-section .col-md-7 img {
-        margin: 0 auto 15px auto !important;
-        display: block !important;
-    }
-    
-    .hero-section .col-md-5 {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .product-card {
-        width: 100%;
-        max-width: 340px;
-    }
-}
-        /* THREADED - PRIVACY POLICY PAGE */
-
-/* Main Privacy Policy Container */
-.privacy-container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 45px 60px;
-    background-color: #F5F2EA;
-    color: var(--primary-green);
-    border: 2px solid var(--brand-tan);
-}
-
-/* Main Heading */
-.privacy-container h1 {
-    font-family: var(--font-heading);
-    font-size: 42px;
-    font-weight: 700;
-    color: var(--primary-green);
-    margin-bottom: 15px;
-    text-align: start;
-}
-
-/* Last Updated */
-.privacy-container > p:first-of-type {
-    font-family: var(--font-body);
-    font-size: 14px;
-    color: var(--secondary-green);
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-/* Introduction */
-.privacy-container > p:nth-of-type(2) {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    text-align: justify;
-}
-
-/* Section Headings */
-.privacy-container h2 {
-    font-family: var(--font-heading);
-    font-size: 23px;
-    font-weight: 600;
-    color: var(--primary-green);
-    margin-top: 35px;
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--brand-tan);
-}
-
-/* Policy Paragraphs */
-.privacy-container p {
-    font-family: var(--font-body);
-    font-size: 15px;
-    line-height: 1.9;
-    color: var(--primary-green);
-    margin-bottom: 18px;
-    text-align: justify;
-}
-
-/* Emphasized Text */
-.privacy-container strong {
-    font-weight: 700;
-    color: var(--secondary-green);
-}
-
-/* Links Inside Privacy Policy */
-.privacy-container a {
-    color: var(--brand-tan);
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.privacy-container a:hover {
-    color: var(--secondary-green);
-}
-
-/* Keyboard Accessibility */
-.privacy-container a:focus-visible {
-    outline: 3px solid var(--brand-tan);
-    outline-offset: 4px;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 768px) {
-
-    .privacy-container {
-        width: 92%;
-        margin: 35px auto;
-        padding: 30px 25px;
-    }
-
-    .privacy-container h1 {
-        font-size: 32px;
-    }
-
-    .privacy-container h2 {
-        font-size: 20px;
-        margin-top: 28px;
-    }
-
-    .privacy-container p {
-        font-size: 14px;
-        line-height: 1.8;
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    .privacy-container {
-        width: 94%;
-        padding: 25px 18px;
-    }
-
-    .privacy-container h1 {
-        font-size: 27px;
-    }
-
-    .privacy-container h2 {
-        font-size: 18px;
-    }
-
-    .privacy-container p {
-        font-size: 13px;
-        text-align: left;
-    }
-
-}
+        /* THREADED - SHARED WEBSITE CSS */
+
+        :root {
+            --primary-green: #2C3930;
+            --secondary-green: #3F4F44;
+            --brand-tan: #A27B5C;
+            --bg-beige: #DCD7C9;
+
+            --font-heading: 'Lexend', sans-serif;
+            --font-body: 'Comfortaa', sans-serif;
+            --font-logo: 'Tilt Neon', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-beige);
+            font-family: var(--font-body);
+            color: #2C3930;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: #2C3930;
+        }
+
+        a {
+            color: #2C3930;
+        }
+
+        .brand-title,
+        .logo-text {
+            font-family: var(--font-logo);
+            font-weight: 400;
+            font-variation-settings: 'XROT' 13, 'YROT' 45;
+            color: #DCD7C9;
+        }
+
+        .logo-text {
+            font-size: 32px;
+        }
+
+        .brand-title {
+            font-size: 96px;
+            margin-bottom: 0;
+        }
+
+        .brand-tagline {
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .about-text {
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* HEADER */
+
+        .site-header {
+            background-image: url('img/headerfooter-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #DCD7C9;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* FOOTER */
+
+        .site-footer {
+            background-image: url('img/headerfooter-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-top: auto;
+            height: auto;
+            min-height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem 0;
+            font-size: 15px;
+        }
+
+        .site-footer p {
+            color: #DCD7C9;
+        }
+
+        /* NAVIGATION ICONS */
+
+        .nav-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+            object-fit: contain;
+        }
+
+        .footer-icon {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+        }
+
+        .site-header a {
+            color: #DCD7C9;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .site-footer a {
+            color: #DCD7C9;
+            text-decoration: none;
+        }
+
+        /* LINKS AND ACCESSIBILITY */
+
+        .site-header a:hover,
+        .site-footer a:hover {
+            color: var(--brand-tan);
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--brand-tan);
+            outline-offset: 2px;
+        }
+
+        .site-header a:focus-visible,
+        .site-footer a:focus-visible {
+            outline-color: var(--brand-tan);
+        }
+
+
+        /* THREADED - PRIVACY POLICY PAGE CSS */
+
+        .privacy-main {
+            flex-grow: 1;
+        }
+
+        .privacy-container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 45px 60px;
+            background-color: #F5F2EA;
+            color: var(--primary-green);
+            border: 2px solid var(--brand-tan);
+        }
+
+        /* Main Heading */
+
+        .privacy-container h1 {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .privacy-heading {
+            text-align: left;
+        }
+
+        .privacy-heading .last-updated {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--secondary-green);
+            text-align: left;
+            margin-bottom: 35px;
+        }
+
+        /* Introduction */
+
+        .privacy-intro {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        /* Section Headings */
+
+        .privacy-container h2 {
+            font-family: var(--font-heading);
+            font-size: 23px;
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-top: 35px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--brand-tan);
+        }
+
+        /* Policy Paragraphs */
+
+        .privacy-container p {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--primary-green);
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        /* Emphasized Text */
+
+        .privacy-container strong {
+            font-weight: 700;
+            color: var(--secondary-green);
+        }
+
+        /* Links Inside Privacy Policy */
+
+        .privacy-container a {
+            color: var(--brand-tan);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .privacy-container a:hover {
+            color: var(--secondary-green);
+        }
+
+        .privacy-container a:focus-visible {
+            outline: 3px solid var(--brand-tan);
+            outline-offset: 4px;
+        }
+
+
+        /*RESPONSIVE DESIGN*/
+
+        @media (max-width: 991px) {
+            .brand-title {
+                font-size: 56px;
+            }
+
+            .brand-tagline {
+                font-size: 18px;
+            }
+
+            .about-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Header */
+
+            .site-header {
+                height: 80px;
+                padding: 0;
+            }
+
+            .site-header .container-fluid {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                padding: 0 10px;
+            }
+
+            .site-header .logo img {
+                width: 45px !important;
+                height: 45px !important;
+            }
+
+            .site-header .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .site-header nav ul {
+                gap: 10px;
+            }
+
+            .nav-icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            .site-header a {
+                font-size: 0.7rem;
+            }
+
+            /* Privacy Policy */
+
+            .privacy-container {
+                width: 92%;
+                margin: 35px auto;
+                padding: 30px 25px;
+            }
+
+            .privacy-container h1 {
+                font-size: 32px;
+            }
+
+            .privacy-container h2 {
+                font-size: 20px;
+                margin-top: 28px;
+            }
+
+            .privacy-container p {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .privacy-container {
+                width: 94%;
+                padding: 25px 18px;
+            }
+
+            .privacy-container h1 {
+                font-size: 27px;
+            }
+
+            .privacy-container h2 {
+                font-size: 18px;
+            }
+
+            .privacy-container p {
+                font-size: 13px;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 
 <body class="privacy-page">
 
-<li>
-    <a href="contact.html" class="d-flex flex-column align-items-center text-decoration-none">
-        <img src="img/Contact-icon-light.png" alt="Navigate to Contact Us" class="nav-icon">
-        Contact
-    </a>
-</li>
-</head>
-
-<body class="privacy-page">
-</head>
-
-<body>
+    <!-- HEADER -->
     <header class="site-header py-3">
         <div class="container-fluid px-3 px-md-5 d-flex justify-content-between align-items-center">
+
             <div class="logo d-flex align-items-center">
-                <img src="img/ThreadedLogo-SimpleLight.png" alt="Threaded Logo Simple Light" class="me-2" style="width: 83px; height: 83px; object-fit: contain;">
-                <span class="logo-text" style="font-family: 'Tilt Neon', sans-serif; font-variation-settings: 'XROT' 13, 'YROT' 45;">Threaded</span>
+                <img src="img/ThreadedLogo-SimpleLight.png"
+                    alt="Threaded Logo Simple Light"
+                    class="me-2"
+                    style="width: 83px; height: 83px; object-fit: contain;">
+
+                <span class="logo-text"
+                    style="font-family: 'Tilt Neon', sans-serif; font-variation-settings: 'XROT' 13, 'YROT' 45;">
+                    Threaded
+                </span>
             </div>
+
             <nav>
                 <ul class="d-flex gap-4 list-unstyled mb-0 text-center">
+
                     <li>
-                        <a href="index.html" class="d-flex flex-column align-items-center text-decoration-none">
-                            <img src="img/home-icon-light.png" alt="Navigate to Home" class="nav-icon">
+                        <a href="index.html"
+                            class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="img/home-icon-light.png"
+                                alt="Navigate to Home"
+                                class="nav-icon">
                             Home
                         </a>
                     </li>
+
                     <li>
-                        <a href="index.html#products-section" class="d-flex flex-column align-items-center text-decoration-none">
-                            <img src="img/shop-icon-light.png" alt="Navigate to Shop" class="nav-icon">
+                        <a href="index.html#products-section"
+                            class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="img/shop-icon-light.png"
+                                alt="Navigate to Shop"
+                                class="nav-icon">
                             Shop
                         </a>
                     </li>
+
                     <li>
-                        <a href="contact.html" class="d-flex flex-column align-items-center text-decoration-none">
-                            <img src="img/Contact-icon-light.png" alt="Navigate to Contact Us" class="nav-icon">
+                        <a href="contact.html"
+                            class="d-flex flex-column align-items-center text-decoration-none">
+                            <img src="img/Contact-icon-light.png"
+                                alt="Navigate to Contact Us"
+                                class="nav-icon">
                             Contact
                         </a>
                     </li>
+
                 </ul>
             </nav>
+
         </div>
     </header>
 
 
     <!-- MAIN: PRIVACY POLICY -->
+
     <main class="privacy-main">
 
-        <div class="privacy-container text-start">
+        <div class="privacy-container">
 
-            <div class="privacy-heading text-start">
+            <div class="privacy-heading">
                 <h1>Privacy Policy</h1>
-                <p class="last-updated">Last Updated: November 15, 2026</p>
+                <p class="last-updated">
+                    Last Updated: November 15, 2026
+                </p>
             </div>
 
             <p class="privacy-intro">
                 At Threaded, we respect your privacy. This Privacy Policy explains what personal information may be collected when you visit our website or place an order, how it is used, and how it is handled.
             </p>
-
 
             <section class="policy-section">
                 <h2>1. Information We Collect</h2>
@@ -506,14 +446,12 @@ textarea:focus-visible {
                 </p>
             </section>
 
-
             <section class="policy-section">
                 <h2>2. How We Use Your Information</h2>
                 <p>
                     We use the information you provide to respond to inquiries, review order requests, confirm product availability, coordinate order details, and communicate with you about your purchase.
                 </p>
             </section>
-
 
             <section class="policy-section">
                 <h2>3. How Orders Are Processed</h2>
@@ -522,14 +460,12 @@ textarea:focus-visible {
                 </p>
             </section>
 
-
             <section class="policy-section">
                 <h2>4. Sharing of Information</h2>
                 <p>
                     Threaded does not intend to sell your personal information. We may use the information you provide to respond to your requests and manage your orders. Information may also be disclosed when required by applicable law.
                 </p>
             </section>
-
 
             <section class="policy-section">
                 <h2>5. Data Protection and Retention</h2>
@@ -538,14 +474,12 @@ textarea:focus-visible {
                 </p>
             </section>
 
-
             <section class="policy-section">
                 <h2>6. Cookies and Website Data</h2>
                 <p>
                     Our website may use basic technical features necessary for its operation. If cookies or analytics tools are used, this policy should be updated to explain what information they collect and how it is used.
                 </p>
             </section>
-
 
             <section class="policy-section">
                 <h2>7. Your Privacy Rights</h2>
@@ -554,14 +488,12 @@ textarea:focus-visible {
                 </p>
             </section>
 
-
             <section class="policy-section">
                 <h2>8. Updates to This Policy</h2>
                 <p>
                     We may update this Privacy Policy when our practices or website features change. Any revisions will be posted on this page with an updated date.
                 </p>
             </section>
-
 
             <section class="policy-section">
                 <h2>9. Contact Us</h2>
@@ -575,23 +507,39 @@ textarea:focus-visible {
     </main>
 
 
-     <footer class="site-footer text-center mt-5">
+    <!-- FOOTER -->
+
+    <footer class="site-footer text-center mt-5">
+
         <div class="container-fluid px-5">
-                <p class="mb-1">©2026 THREADED All Rights Reserved</p>
-                <div class="d-flex justify-content-center gap-4">
-                    <a href="privacy.html" class="d-inline-flex align-items-center">
-                        <img src="img/privacypolicy-icon-light.png" alt="Privacy Policy Icon" class="footer-icon me-1">
-                        Privacy Policy
-                    </a>
-                    <a href="terms.html" class="d-inline-flex align-items-center">
-                        <img src="img/termsandcondition-icon-light.png" alt="Terms and Condition Icon" class="footer-icon me-1">
-                        Terms and Condition
-                    </a>
-                </div>
+
+            <p class="mb-1">©2026 THREADED All Rights Reserved</p>
+
+            <div class="d-flex justify-content-center gap-4">
+
+                <a href="privacy.html" class="d-inline-flex align-items-center">
+                    <img src="img/privacypolicy-icon-light.png"
+                        alt="Privacy Policy Icon"
+                        class="footer-icon me-1">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html" class="d-inline-flex align-items-center">
+                    <img src="img/termsandcondition-icon-light.png"
+                        alt="Terms and Condition Icon"
+                        class="footer-icon me-1">
+                    Terms and Condition
+                </a>
+
+            </div>
+
         </div>
+
     </footer>
 
 </body>
+</html>
+
 
 </html>
 

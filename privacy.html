@@ -388,30 +388,19 @@
                 text-align: left;
             }
         }
-        .policy-section {
-    border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
-    background: none !important;
+       .policy-section {
+    border: 0 !important;
+    outline: 0 !important;
+    background-image: none !important;
     box-shadow: none !important;
 }
 
-.policy-section h2,
-.policy-section p {
-    border: none !important;
-    background: none !important;
-    box-shadow: none !important;
-    text-decoration: none !important;
+.policy-section + .policy-section {
+    border-top: 0 !important;
 }
 
-.policy-section::before,
-.policy-section::after,
-.policy-section h2::before,
-.policy-section h2::after,
-.policy-section p::before,
-.policy-section p::after {
-    content: none !important;
-    display: none !important;
+.policy-section h2 {
+    border: 0 !important;
 }
     </style>
 </head>

@@ -1,449 +1,524 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Threaded - Contact Us</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <!-- Google Fonts -->
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lexend:wght@300;400;700&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap"
         rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
+    <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Existing Threaded Stylesheet -->
-    <link rel="stylesheet" href="css/wifivestyle.css">
-
     <style>
-        /* ==============================
-           GENERAL PAGE SETTINGS
-        ============================== */
 
-        html, body {
+        /* =================================
+           SHARED THREADED WEBSITE STYLES
+           MATCHED WITH TERMS AND CONDITIONS
+        ================================= */
+
+        :root {
+            --primary-green: #2C3930;
+            --secondary-green: #3F4F44;
+            --brand-tan: #A27B5C;
+            --bg-beige: #DCD7C9;
+
+            --font-heading: 'Lexend', sans-serif;
+            --font-body: 'Comfortaa', sans-serif;
+            --font-logo: 'Tilt Neon', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html, body {
             min-height: 100%;
         }
 
         body {
-            font-family: 'Lexend', sans-serif;
-            background-color: #dedacd;
-        }
-
-        .contact-page {
-            min-height: 100vh;
+            background-color: var(--bg-beige);
+            font-family: var(--font-body);
+            color: var(--primary-green);
             display: flex;
             flex-direction: column;
-            background-color: #dedacd;
+            min-height: 100vh;
         }
 
-        /* ==============================
-           HEADER
-        ============================== */
+        main {
+            flex-grow: 1;
+        }
 
-        .contact-page .site-header {
-            background-image: url('img/your-background-image.jpg');
-            background-color: #071b12;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--primary-green);
+        }
+
+        a {
+            color: var(--primary-green);
+        }
+
+        .logo-text {
+            font-family: var(--font-logo);
+            font-weight: 400;
+            font-variation-settings: 'XROT' 13, 'YROT' 45;
+            color: #DCD7C9;
+            font-size: 32px;
+        }
+
+        /* HEADER - SAME AS TERMS PAGE */
+
+        .site-header {
+            background-color: rgba(44, 57, 48, 0.85);
+            background-image: url('img/headerfooter-bg.jpg');
+            background-repeat: repeat;
+            background-position: center center;
+            color: #DCD7C9;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            flex-shrink: 0;
+        }
+
+        /* FOOTER - SAME AS TERMS PAGE */
+
+        .site-footer {
+            background-image: url('img/headerfooter-bg.jpg');
             background-size: cover;
             background-position: center;
-            padding: 8px 0 !important;
-            flex-shrink: 0;
+            margin-top: auto;
+            height: auto;
+            min-height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem 0;
+            font-size: 15px;
         }
 
-        .contact-page .logo img {
-            width: 83px;
-            height: 83px;
+        .site-footer p {
+            color: #DCD7C9;
+        }
+
+        /* ICONS */
+
+        .nav-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
             object-fit: contain;
         }
 
-        .contact-page .logo-text {
-            color: #f5f1e8;
-            font-size: 25px;
-            font-family: 'Tilt Neon', sans-serif;
-            font-variation-settings: 'XROT' 13, 'YROT' 45;
-        }
-
-        .contact-page nav a {
-            color: #f5f1e8 !important;
-            font-family: 'Lexend', sans-serif;
-            font-size: 17px;
-        }
-
-        .contact-page .nav-icon {
-            width: 45px;
-            height: 45px;
+        .footer-icon {
+            width: 25px;
+            height: 25px;
             object-fit: contain;
         }
 
-        /* ==============================
-           CONTACT HEADING
-        ============================== */
+        .site-header a {
+            color: #DCD7C9;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-        .contact-page .contact-heading {
-            display: block !important;
-            visibility: visible !important;
-            background-color: #293b30;
-            color: #f5f1e8;
-            text-align: center;
-            padding: 22px 15px;
+        .site-footer a {
+            color: #DCD7C9;
+            text-decoration: none;
+        }
+
+        .site-header a:hover,
+        .site-footer a:hover {
+            color: var(--brand-tan);
+        }
+
+        /* ACCESSIBILITY */
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--brand-tan);
+            outline-offset: 2px;
+        }
+
+
+        /* =================================
+           CONTACT PAGE
+        ================================= */
+
+        /* BEIGE CONTACT US TITLE STRIP */
+
+        .contact-title {
             width: 100%;
-            flex-shrink: 0;
+            background-color: var(--bg-beige);
+            text-align: center;
+            padding: 13px 15px;
         }
 
-        .contact-page .contact-heading h1 {
-            font-family: 'Lexend', sans-serif;
-            font-size: 30px;
+        .contact-title h1 {
+            font-family: var(--font-heading);
+            font-size: 26px;
             font-weight: 700;
-            margin: 0 0 5px;
-        }
-
-        .contact-page .contact-heading p {
-            font-family: 'Comfortaa', sans-serif;
-            font-size: 14px;
-            color: #d4d4ca;
+            color: var(--primary-green);
             margin: 0;
         }
 
-        /* ==============================
-           MAIN CONTACT SECTION
-        ============================== */
 
-        .contact-page .contact-section {
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            position: relative;
+        /* GREEN SUBTITLE STRIP */
+
+        .contact-subtitle {
             width: 100%;
-            flex: 1 0 auto;
+            background-color: var(--primary-green);
+            text-align: center;
+            padding: 16px 15px;
+        }
+
+        .contact-subtitle p {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--bg-beige);
+            margin: 0;
+        }
+
+
+        /* MAIN CONTACT SECTION */
+
+        .contact-section {
+            width: 100%;
+            flex-grow: 1;
             padding: 35px 5%;
-            background-color: #dedacd;
+            background-color: var(--bg-beige);
         }
 
-        .contact-page .contact-section .row {
-            display: flex;
-            visibility: visible !important;
-        }
 
-        .contact-page .contact-form {
-            display: block !important;
-            visibility: visible !important;
-            background-color: #293b30;
+        /* CONTACT FORM */
+
+        .contact-form {
+            background-color: var(--primary-green);
             padding: 25px;
-            width: 100%;
             height: 100%;
+            width: 100%;
         }
 
-        /* ==============================
-           FORM LABELS
-        ============================== */
-
-        .contact-page .contact-form label {
+        .contact-form label {
             display: block;
-            color: #e8e8df;
-            font-family: 'Comfortaa', sans-serif;
+            color: #E8E8DF;
+            font-family: var(--font-body);
             font-size: 12px;
             margin-bottom: 7px;
         }
 
-        /* ==============================
-           FORM INPUTS
-        ============================== */
 
-        .contact-page .contact-form .form-control {
-            display: block;
-            width: 100%;
+        /* INPUT FIELDS */
+
+        .contact-form .form-control {
             background-color: #526357;
             color: white;
             border: none;
             border-radius: 0;
-            font-family: 'Lexend', sans-serif;
+            font-family: var(--font-heading);
             font-size: 13px;
             margin-bottom: 14px;
             padding: 10px;
         }
 
-        .contact-page .contact-form .form-control::placeholder {
-            color: #c9cec8;
+        .contact-form .form-control::placeholder {
+            color: #DCD7C9;
             opacity: 1;
         }
 
-        .contact-page .contact-form .form-control:focus {
+        .contact-form .form-control:focus {
             background-color: #526357;
             color: white;
-            box-shadow: 0 0 0 2px #a98263;
+            box-shadow: 0 0 0 2px var(--brand-tan);
         }
 
-        /* ==============================
-           SUBMIT BUTTON
-        ============================== */
 
-        .contact-page .submit-btn {
-            background-color: #a98263;
+        /* SUBMIT BUTTON */
+
+        .submit-btn {
+            background-color: var(--brand-tan);
             color: white;
             border: none;
             border-radius: 0;
             width: 60%;
             padding: 10px;
-            font-family: 'Lexend', sans-serif;
+            font-family: var(--font-heading);
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .contact-page .submit-btn:hover {
-            background-color: #89694f;
+        .submit-btn:hover {
+            background-color: #89694F;
             color: white;
         }
 
-        /* ==============================
-           IMAGE PLACEHOLDER
-        ============================== */
 
-        .contact-page .contact-image {
-            display: block !important;
-            visibility: visible !important;
+        /* CONTACT IMAGE PLACEHOLDER */
+
+        .contact-image {
+            display: block;
             position: relative;
             width: 100%;
-            aspect-ratio: 1 / 1;
-            background-color: #c9c9c9;
-            border: 1px solid #99958d;
+            height: 390px;
+            background-color: #C9C9C9;
+            border: 1px solid #99958D;
             overflow: hidden;
         }
 
-        .contact-page .contact-image::before,
-        .contact-page .contact-image::after {
+        .contact-image::before,
+        .contact-image::after {
             content: "";
             position: absolute;
             width: 141.5%;
             height: 1px;
-            background-color: #99958d;
+            background-color: #99958D;
             top: 50%;
             left: -20.75%;
         }
 
-        .contact-page .contact-image::before {
+        .contact-image::before {
             transform: rotate(45deg);
         }
 
-        .contact-page .contact-image::after {
+        .contact-image::after {
             transform: rotate(-45deg);
         }
 
-        /* ==============================
-           SOCIAL MEDIA LINKS
-        ============================== */
 
-        .contact-page .social-links {
-            display: flex !important;
+        /* SOCIAL MEDIA LINKS */
+
+        .social-links {
+            display: flex;
             justify-content: space-around;
             align-items: center;
             text-align: center;
             margin-top: 15px;
         }
 
-        .contact-page .social-links a {
-            color: #293b30;
+        .social-links a {
+            color: var(--primary-green);
             text-decoration: none;
-            font-family: 'Lexend', sans-serif;
+            font-family: var(--font-heading);
             font-size: 12px;
             transition: 0.3s;
         }
 
-        .contact-page .social-links i {
+        .social-links i {
             display: block;
             font-size: 23px;
             margin-bottom: 3px;
         }
 
-        .contact-page .social-links a:hover {
-            color: #a98263;
+        .social-links a:hover {
+            color: var(--brand-tan);
         }
 
-        /* ==============================
-           FOOTER
-        ============================== */
 
-        .contact-page .site-footer {
-            display: block !important;
-            visibility: visible !important;
-            position: relative;
-            width: 100%;
-            margin-top: auto !important;
-            padding: 22px 0;
-            background-color: #071b12;
-            background-image: url('img/your-background-image.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #f5f1e8;
-            flex-shrink: 0;
-        }
+        /* =================================
+           RESPONSIVE DESIGN
+           HEADER MATCHES TERMS PAGE
+        ================================= */
 
-        .contact-page .site-footer p {
-            color: #f5f1e8;
-            font-size: 13px;
-        }
+        @media (max-width: 768px) {
 
-        .contact-page .site-footer a {
-            color: #f5f1e8;
-            text-decoration: none;
-            font-family: 'Lexend', sans-serif;
-            font-size: 13px;
-        }
-
-        .contact-page .site-footer a:hover {
-            color: #a98263;
-        }
-
-        .contact-page .footer-icon {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-        }
-
-        /* ==============================
-           TABLET AND MOBILE RESPONSIVENESS
-        ============================== */
-
-        @media (max-width: 767px) {
-
-            .contact-page .site-header {
-                padding: 8px 0 !important;
+            .site-header {
+                height: 80px;
+                padding: 0;
             }
 
-            .contact-page .logo img {
-                width: 55px;
-                height: 55px;
+            .site-header .container-fluid {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                padding: 0 10px;
             }
 
-            .contact-page .logo-text {
-                font-size: 18px;
+            .site-header .logo img {
+                width: 45px !important;
+                height: 45px !important;
             }
 
-            .contact-page nav a {
-                font-size: 11px;
+            .site-header .logo-text {
+                font-size: 1.2rem;
             }
 
-            .contact-page .nav-icon {
-                width: 30px;
-                height: 30px;
+            .site-header nav ul {
+                gap: 10px;
             }
 
-            .contact-page .contact-heading {
-                padding: 20px 15px;
+            .nav-icon {
+                width: 25px;
+                height: 25px;
             }
 
-            .contact-page .contact-heading h1 {
-                font-size: 25px;
+            .site-header a {
+                font-size: 0.7rem;
             }
 
-            .contact-page .contact-section {
+            /* CONTACT PAGE MOBILE */
+
+            .contact-title {
+                padding: 12px 15px;
+            }
+
+            .contact-title h1 {
+                font-size: 23px;
+            }
+
+            .contact-subtitle {
+                padding: 14px;
+            }
+
+            .contact-section {
                 padding: 25px 18px;
             }
 
-            .contact-page .contact-form {
+            .contact-form {
                 padding: 20px;
             }
 
-            .contact-page .contact-image {
-                aspect-ratio: 4 / 3;
+            .contact-image {
+                height: 280px;
             }
 
-            .contact-page .submit-btn {
+            .submit-btn {
                 width: 100%;
             }
 
-            .contact-page .social-links {
+            .social-links {
                 margin-bottom: 10px;
             }
 
-            .contact-page .site-footer {
-                padding: 15px 0;
+            .site-footer {
+                padding: 1.5rem 0;
             }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .contact-title h1 {
+                font-size: 21px;
+            }
+
+            .contact-section {
+                padding: 20px 15px;
+            }
+
+            .contact-image {
+                height: 240px;
+            }
+
+            .contact-form {
+                padding: 18px;
+            }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
 
-<div class="contact-page">
+    <!-- =================================
+         HEADER - SAME AS TERMS PAGE
+    ================================= -->
 
-    <!-- ==============================
-         HEADER / NAVIGATION
-    ============================== -->
-
-    <header class="site-header">
+    <header class="site-header py-3">
 
         <div class="container-fluid px-3 px-md-5 d-flex justify-content-between align-items-center">
 
             <!-- LOGO -->
+
             <div class="logo d-flex align-items-center">
 
                 <img src="img/ThreadedLogo-SimpleLight.png"
                     alt="Threaded Logo Simple Light"
-                    class="me-2">
+                    class="me-2"
+                    style="width: 83px; height: 83px; object-fit: contain;">
 
-                <span class="logo-text">
+                <span class="logo-text"
+                    style="font-family: 'Tilt Neon', sans-serif; font-variation-settings: 'XROT' 13, 'YROT' 45;">
+
                     Threaded
+
                 </span>
 
             </div>
 
+
             <!-- NAVIGATION -->
+
             <nav>
 
-                <ul class="d-flex gap-3 gap-md-4 list-unstyled mb-0 text-center">
+                <ul class="d-flex gap-4 list-unstyled mb-0 text-center">
 
                     <li>
+
                         <a href="index.html"
                             class="d-flex flex-column align-items-center text-decoration-none">
 
                             <img src="img/home-icon-light.png"
-                                alt="Home"
+                                alt="Navigate to Home"
                                 class="nav-icon">
 
                             Home
 
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="index.html#products-section"
                             class="d-flex flex-column align-items-center text-decoration-none">
 
                             <img src="img/shop-icon-light.png"
-                                alt="Shop"
+                                alt="Navigate to Shop"
                                 class="nav-icon">
 
                             Shop
 
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <a href="contact.html"
                             class="d-flex flex-column align-items-center text-decoration-none">
 
                             <img src="img/Contact-icon-light.png"
-                                alt="Contact"
+                                alt="Navigate to Contact Us"
                                 class="nav-icon">
 
                             Contact
 
                         </a>
+
                     </li>
 
                 </ul>
@@ -455,22 +530,31 @@
     </header>
 
 
-    <!-- ==============================
-         CONTACT HEADING
-    ============================== -->
+    <!-- =================================
+         CONTACT US TITLE - BEIGE STRIP
+    ================================= -->
 
-    <section class="contact-heading">
+    <section class="contact-title">
 
         <h1>CONTACT US</h1>
+
+    </section>
+
+
+    <!-- =================================
+         CONTACT SUBTITLE - GREEN STRIP
+    ================================= -->
+
+    <section class="contact-subtitle">
 
         <p>Got a question?</p>
 
     </section>
 
 
-    <!-- ==============================
+    <!-- =================================
          MAIN CONTACT SECTION
-    ============================== -->
+    ================================= -->
 
     <main class="contact-section">
 
@@ -478,13 +562,15 @@
 
             <div class="row g-4 align-items-start">
 
-                <!-- LEFT: CONTACT FORM -->
+
+                <!-- LEFT SIDE: CONTACT FORM -->
 
                 <div class="col-md-7">
 
                     <form class="contact-form" id="contactForm">
 
                         <div class="row">
+
 
                             <!-- FIRST NAME -->
 
@@ -502,6 +588,7 @@
 
                             </div>
 
+
                             <!-- LAST NAME -->
 
                             <div class="col-md-6">
@@ -518,7 +605,8 @@
 
                             </div>
 
-                            <!-- EMAIL -->
+
+                            <!-- EMAIL ADDRESS -->
 
                             <div class="col-md-6">
 
@@ -535,6 +623,7 @@
 
                             </div>
 
+
                             <!-- MOBILE NUMBER -->
 
                             <div class="col-md-6">
@@ -550,6 +639,7 @@
                                     placeholder="Enter your mobile number">
 
                             </div>
+
 
                             <!-- MESSAGE -->
 
@@ -570,12 +660,15 @@
 
                         </div>
 
+
                         <!-- SUBMIT BUTTON -->
 
                         <div class="text-center mt-2">
 
                             <button type="submit" class="btn submit-btn">
+
                                 SUBMIT
+
                             </button>
 
                         </div>
@@ -585,20 +678,26 @@
                 </div>
 
 
-                <!-- RIGHT: IMAGE AND SOCIAL MEDIA -->
+
+                <!-- RIGHT SIDE: IMAGE AND SOCIAL MEDIA -->
 
                 <div class="col-md-5">
+
 
                     <!-- IMAGE PLACEHOLDER -->
 
                     <div class="contact-image"
                         role="img"
                         aria-label="Contact Us image placeholder">
+
                     </div>
+
+
 
                     <!-- SOCIAL MEDIA LINKS -->
 
                     <div class="social-links">
+
 
                         <!-- FACEBOOK -->
 
@@ -612,6 +711,7 @@
 
                         </a>
 
+
                         <!-- INSTAGRAM -->
 
                         <a href="https://www.instagram.com/"
@@ -623,6 +723,7 @@
                             Instagram
 
                         </a>
+
 
                         <!-- TIKTOK -->
 
@@ -647,9 +748,10 @@
     </main>
 
 
-    <!-- ==============================
-         FOOTER
-    ============================== -->
+
+    <!-- =================================
+         FOOTER - SAME AS TERMS PAGE
+    ================================= -->
 
     <footer class="site-footer text-center">
 
@@ -659,7 +761,11 @@
                 ©2026 THREADED All Rights Reserved
             </p>
 
+
             <div class="d-flex justify-content-center gap-4 flex-wrap">
+
+
+                <!-- PRIVACY POLICY -->
 
                 <a href="privacy.html"
                     class="d-inline-flex align-items-center">
@@ -671,6 +777,9 @@
                     Privacy Policy
 
                 </a>
+
+
+                <!-- TERMS AND CONDITIONS -->
 
                 <a href="terms.html"
                     class="d-inline-flex align-items-center">
@@ -689,64 +798,74 @@
 
     </footer>
 
-</div>
 
 
-<!-- ==============================
-     JAVASCRIPT: CONTACT FORM
-============================== -->
+    <!-- =================================
+         JAVASCRIPT: CONTACT FORM
+    ================================= -->
 
-<script>
+    <script>
 
-    const contactForm = document.getElementById("contactForm");
+        const contactForm = document.getElementById("contactForm");
 
-    contactForm.addEventListener("submit", function(event) {
+        contactForm.addEventListener("submit", function(event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        const firstName = document.getElementById("firstName").value.trim();
-        const lastName = document.getElementById("lastName").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const mobile = document.getElementById("mobile").value.trim();
-        const message = document.getElementById("message").value.trim();
+            const firstName = document.getElementById("firstName").value.trim();
 
-        // CHANGE THIS TO YOUR ACTUAL CONTACT EMAIL
-        const recipient = "hello@examplewebsite142.com";
+            const lastName = document.getElementById("lastName").value.trim();
 
-        const subject = encodeURIComponent(
-            "Contact Us - Threaded Website"
-        );
+            const email = document.getElementById("email").value.trim();
 
-        const body = encodeURIComponent(
+            const mobile = document.getElementById("mobile").value.trim();
 
-            "CONTACT US - THREADED\n\n" +
-
-            "Name: " + firstName + " " + lastName + "\n" +
-
-            "Email Address: " + email + "\n" +
-
-            "Mobile Number: " + mobile + "\n\n" +
-
-            "Message:\n" + message
-
-        );
-
-        const mailtoLink = "mailto:" + recipient +
-            "?subject=" + subject +
-            "&body=" + body;
-
-        window.location.href = mailtoLink;
-
-    });
-
-</script>
+            const message = document.getElementById("message").value.trim();
 
 
-<!-- BOOTSTRAP JAVASCRIPT -->
+            // CHANGE TO YOUR ACTUAL CONTACT EMAIL
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+            const recipient = "hello@examplewebsite142.com";
+
+
+            const subject = encodeURIComponent(
+                "Contact Us - Threaded Website"
+            );
+
+
+            const body = encodeURIComponent(
+
+                "CONTACT US - THREADED\n\n" +
+
+                "Name: " + firstName + " " + lastName + "\n" +
+
+                "Email Address: " + email + "\n" +
+
+                "Mobile Number: " + mobile + "\n\n" +
+
+                "Message:\n" + message
+
+            );
+
+
+            const mailtoLink = "mailto:" + recipient +
+                "?subject=" + subject +
+                "&body=" + body;
+
+
+            window.location.href = mailtoLink;
+
+        });
+
+    </script>
+
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 
 </html>
+

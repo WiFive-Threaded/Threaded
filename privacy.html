@@ -204,7 +204,7 @@
             font-family: var(--font-body);
             font-size: 14px;
             color: var(--secondary-green);
-            text-align: left;
+            text-align: right;
             margin-bottom: 35px;
         }
 
@@ -372,7 +372,18 @@
 
     .privacy-main h2,
 .terms-main h2 {
+    border: none !important;
     border-bottom: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.privacy-main h2::before,
+.privacy-main h2::after,
+.terms-main h2::before,
+.terms-main h2::after {
+    content: none !important;
+    display: none !important;
 }
     </style>
 </head>

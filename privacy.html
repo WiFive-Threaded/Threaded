@@ -388,29 +388,30 @@
                 text-align: left;
             }
         }
-        .privacy-main,
-.terms-main {
-    width: 100% !important;
-    margin: 40px 0 !important;
-    padding: 0 80px !important;
-    box-sizing: border-box
-
-    .privacy-main h2,
-.terms-main h2 {
+        .policy-section {
     border: none !important;
+    border-top: none !important;
     border-bottom: none !important;
-    background-image: none !important;
+    background: none !important;
     box-shadow: none !important;
 }
-.privacy-main h2,
-.terms-main h2 {
-    border-bottom: none !important;
+
+.policy-section h2,
+.policy-section p {
     border: none !important;
-    padding-bottom: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
 }
-.privacy-main p,
-.terms-main p {
-    border: none !important;
+
+.policy-section::before,
+.policy-section::after,
+.policy-section h2::before,
+.policy-section h2::after,
+.policy-section p::before,
+.policy-section p::after {
+    content: none !important;
+    display: none !important;
 }
     </style>
 </head>

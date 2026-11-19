@@ -1,0 +1,134 @@
+
+/* THREADED - PRIVACY POLICY PAGE */
+
+/* Main Privacy Policy Container */
+.privacy-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 45px 60px;
+    background-color: #F5F2EA;
+    color: var(--primary-green);
+    border: 2px solid var(--brand-tan);
+}
+
+/* Main Heading */
+.privacy-container h1 {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    text-align: start;
+}
+
+/* Last Updated */
+.privacy-container > p:first-of-type {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--secondary-green);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Introduction */
+.privacy-container > p:nth-of-type(2) {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+/* Section Headings */
+.privacy-container h2 {
+    font-family: var(--font-heading);
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-top: 35px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--brand-tan);
+}
+
+/* Policy Paragraphs */
+.privacy-container p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--primary-green);
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+/* Emphasized Text */
+.privacy-container strong {
+    font-weight: 700;
+    color: var(--secondary-green);
+}
+
+/* Links Inside Privacy Policy */
+.privacy-container a {
+    color: var(--brand-tan);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.privacy-container a:hover {
+    color: var(--secondary-green);
+}
+
+/* Keyboard Accessibility */
+.privacy-container a:focus-visible {
+    outline: 3px solid var(--brand-tan);
+    outline-offset: 4px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    .privacy-container {
+        width: 92%;
+        margin: 35px auto;
+        padding: 30px 25px;
+    }
+
+    .privacy-container h1 {
+        font-size: 32px;
+    }
+
+    .privacy-container h2 {
+        font-size: 20px;
+        margin-top: 28px;
+    }
+
+    .privacy-container p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .privacy-container {
+        width: 94%;
+        padding: 25px 18px;
+    }
+
+    .privacy-container h1 {
+        font-size: 27px;
+    }
+
+    .privacy-container h2 {
+        font-size: 18px;
+    }
+
+    .privacy-container p {
+        font-size: 13px;
+        text-align: left;
+    }
+
+}

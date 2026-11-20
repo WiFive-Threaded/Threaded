@@ -1,134 +1,242 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Threaded</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Threaded - Contact Us</title>
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lexend:wght@300;400;700&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap"
+        rel="stylesheet">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 
     <style>
+
+        /* =========================================
+           GENERAL WEBSITE STYLES
+        ========================================= */
+
         :root {
             --primary-green: #2C3930;
             --secondary-green: #3F4F44;
             --brand-tan: #A27B5C;
             --bg-beige: #DCD7C9;
+
+            --font-heading: 'Lexend', sans-serif;
+            --font-body: 'Comfortaa', sans-serif;
+            --font-logo: 'Tilt Neon', sans-serif;
         }
 
-        * {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            min-height: 100%;
         }
 
         body {
-            margin: 0;
             background-color: var(--bg-beige);
+            font-family: var(--font-body);
             color: var(--primary-green);
-            font-family: 'Comfortaa', sans-serif;
+
+            display: flex;
+            flex-direction: column;
+
+            min-height: 100vh;
         }
 
-        /* NAVIGATION */
-        .navbar {
-            background-image: url("img/headerfooter-bg.jpg");
-            background-size: cover;
-            background-position: center;
-            padding: 12px 5%;
+        .contact-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        .navbar-brand img {
-            width: 150px;
-            height: auto;
+        main {
+            flex-grow: 1;
         }
 
-        .navbar-nav {
-            align-items: center;
-            gap: 25px;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--primary-green);
         }
 
-        .navbar-nav .nav-link {
-            color: white !important;
-            font-family: 'Lexend', sans-serif;
-            font-size: 15px;
+        a {
+            color: var(--primary-green);
+        }
+
+
+        /* =========================================
+           HEADER AND NAVIGATION
+        ========================================= */
+
+        .site-header {
+            background-color: rgba(44, 57, 48, 0.85);
+            background-image: url('img/headerfooter-bg.jpg');
+            background-repeat: repeat;
+            background-position: center center;
+
+            color: var(--bg-beige);
+
+            width: 100%;
+            height: 100px;
+
             display: flex;
             align-items: center;
-            gap: 8px;
+
+            padding: 15px 0;
+
+            flex-shrink: 0;
         }
 
-        .navbar-nav .nav-link img {
-            width: 23px;
-            height: 23px;
+        .logo-text {
+            font-family: var(--font-logo);
+            font-weight: 400;
+            font-variation-settings: 'XROT' 13, 'YROT' 45;
+
+            color: var(--bg-beige);
+            font-size: 32px;
+        }
+
+        .site-header a {
+            color: var(--bg-beige);
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .site-header a:hover {
+            color: var(--brand-tan);
+        }
+
+        .nav-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
             object-fit: contain;
         }
 
-        /* TOP SPACER */
+
+        /* =========================================
+           EMPTY BEIGE SPACE
+        ========================================= */
+
         .contact-title {
+            width: 100%;
             height: 25px;
             background-color: var(--bg-beige);
         }
 
-        /* CONTACT HEADING */
+
+        /* =========================================
+           CONTACT US HEADING
+        ========================================= */
+
         .contact-subtitle {
+            width: 100%;
             background-color: var(--primary-green);
-            color: white;
             text-align: center;
-            padding: 25px 15px;
+            padding: 20px 15px;
         }
 
         .contact-subtitle h1 {
-            font-family: 'Lexend', sans-serif;
+            font-family: var(--font-heading);
             font-size: 36px;
             font-weight: 700;
-            margin-bottom: 8px;
+            color: var(--bg-beige);
+            margin-bottom: 7px;
         }
 
         .contact-subtitle p {
+            font-family: var(--font-body);
             font-size: 17px;
+            color: var(--bg-beige);
             margin: 0;
         }
 
-        /* MAIN CONTACT SECTION */
+
+        /* =========================================
+           MAIN CONTACT SECTION
+        ========================================= */
+
         .contact-section {
+            width: 100%;
+            flex-grow: 1;
+            padding: 35px 5%;
             background-color: var(--bg-beige);
-            padding: 45px 5%;
         }
 
-        .contact-row {
-            align-items: stretch;
-        }
 
-        /* CONTACT FORM PANEL */
+        /* =========================================
+           CONTACT FORM
+        ========================================= */
+
         .contact-form {
             background-color: var(--primary-green);
-            color: white;
             padding: 30px;
-            width: 100%;
+
+            height: 520px;
             min-height: 520px;
-            border-radius: 4px;
+            width: 100%;
         }
 
-        .contact-form .form-label {
-            font-size: 16px;
-            font-weight: 400;
-            margin-bottom: 8px;
+        .contact-form label {
+            display: block;
+            color: #E8E8DF;
+
+            font-family: var(--font-body);
+            font-size: 13px;
+
+            margin-bottom: 9px;
         }
+
+
+        /* =========================================
+           FORM INPUT FIELDS
+        ========================================= */
 
         .contact-form .form-control {
-            font-family: 'Comfortaa', sans-serif;
-            font-size: 16px;
-            padding: 11px 13px;
-            border-radius: 3px;
-            border: 1px solid #ccc;
+            background-color: #526357;
+            color: white;
+
+            border: none;
+            border-radius: 0;
+
+            font-family: var(--font-heading);
+            font-size: 14px;
+
+            margin-bottom: 18px;
+            padding: 13px;
+        }
+
+        .contact-form .form-control::placeholder {
+            color: var(--bg-beige);
+            opacity: 1;
         }
 
         .contact-form .form-control:focus {
-            border-color: var(--brand-tan);
-            box-shadow: 0 0 0 0.2rem rgba(162, 123, 92, 0.25);
+            background-color: #526357;
+            color: white;
+
+            box-shadow: 0 0 0 2px var(--brand-tan);
         }
 
         .contact-form textarea {
@@ -136,132 +244,237 @@
             min-height: 130px;
         }
 
-        /* CONTACT IMAGE */
+
+        /* =========================================
+           REAL CONTACT IMAGE
+           416 X 520 PX
+        ========================================= */
+
         .contact-image {
-            width: 100%;
-            max-width: 416px;
+            display: block;
+
+            width: 416px;
+            max-width: 100%;
             height: 520px;
+
+            margin: 0 auto;
+
             object-fit: cover;
             object-position: center;
-            border: 3px solid var(--primary-green);
-            display: block;
-            margin: 0 auto;
+
+            border: 1px solid #99958D;
         }
 
-        /* BOTTOM ACTIONS */
+
+        /* =========================================
+           BOTTOM ACTION ROW
+        ========================================= */
+
         .contact-actions {
-            margin-top: 20px;
+            margin-top: 18px;
         }
+
+
+        /* =========================================
+           SUBMIT BUTTON
+        ========================================= */
 
         .submit-btn {
             background-color: var(--brand-tan);
             color: white;
+
             border: none;
-            border-radius: 3px;
+            border-radius: 0;
+
             width: 60%;
-            padding: 14px 20px;
-            font-family: 'Lexend', sans-serif;
-            font-size: 16px;
+            padding: 12px;
+
+            font-family: var(--font-heading);
+            font-size: 12px;
             font-weight: 700;
-            transition: 0.3s ease;
+            letter-spacing: 1px;
+
+            transition: 0.3s;
         }
 
         .submit-btn:hover {
-            background-color: var(--secondary-green);
+            background-color: #89694F;
             color: white;
         }
 
-        .submit-btn:focus-visible {
-            outline: 3px solid var(--primary-green);
-            outline-offset: 3px;
+        .submit-btn:active {
+            background-color: var(--primary-green) !important;
+            color: white !important;
         }
 
-        /* FORM FEEDBACK */
+
+        /* =========================================
+           SUBMISSION FEEDBACK
+        ========================================= */
+
         .form-feedback {
             display: none;
-            color: var(--primary-green);
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.5;
+
+            background-color: var(--primary-green);
+            color: var(--bg-beige);
+
+            padding: 12px 15px;
             margin-top: 12px;
+
+            font-family: var(--font-body);
+            font-size: 12px;
+            line-height: 1.6;
+
+            border-left: 4px solid var(--brand-tan);
         }
 
         .form-feedback.show {
             display: block;
         }
 
-        /* SOCIAL MEDIA */
+
+        /* =========================================
+           SOCIAL MEDIA LINKS
+        ========================================= */
+
         .social-links {
             display: flex;
-            justify-content: center;
+
+            justify-content: space-around;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 22px;
+
+            text-align: center;
         }
 
         .social-links a {
             color: var(--primary-green);
             text-decoration: none;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            transition: 0.3s ease;
-        }
 
-        .social-links a:hover {
-            color: var(--brand-tan);
+            font-family: var(--font-heading);
+            font-size: 13px;
+
+            transition: 0.3s;
         }
 
         .social-links i {
-            font-size: 22px;
+            display: block;
+
+            color: var(--primary-green);
+
+            font-size: 25px;
+            margin-bottom: 5px;
         }
 
-        /* FOOTER */
-        footer {
-            background-image: url("img/headerfooter-bg.jpg");
+        .social-links a:hover,
+        .social-links a:hover i {
+            color: var(--brand-tan);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .site-footer {
+            background-image: url('img/headerfooter-bg.jpg');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 25px 5%;
-            font-family: 'Comfortaa', sans-serif;
-        }
 
-        .footer-links {
+            margin-top: auto;
+
+            height: auto;
+            min-height: 70px;
+
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
+
+            padding: 1.5rem 0;
+            font-size: 15px;
+
+            flex-shrink: 0;
         }
 
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-        }
-
-        .footer-links a:hover {
+        .site-footer p {
             color: var(--bg-beige);
         }
 
-        .footer-links img {
-            width: 22px;
-            height: 22px;
+        .site-footer a {
+            color: var(--bg-beige);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            color: var(--brand-tan);
+        }
+
+        .footer-icon {
+            width: 25px;
+            height: 25px;
             object-fit: contain;
         }
 
-        .footer-copyright {
-            text-align: center;
-            margin-top: 18px;
-            font-size: 13px;
+
+        /* =========================================
+           ACCESSIBILITY
+        ========================================= */
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid var(--brand-tan);
+            outline-offset: 2px;
         }
 
-        /* TABLET */
-        @media (max-width: 991px) {
+
+        /* =========================================
+           TABLET AND MOBILE RESPONSIVENESS
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+            .site-header {
+                height: 80px;
+                padding: 0;
+            }
+
+            .site-header .container-fluid {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                padding: 0 10px;
+            }
+
+            .site-header .logo img {
+                width: 45px !important;
+                height: 45px !important;
+            }
+
+            .site-header .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .site-header nav ul {
+                gap: 10px;
+            }
+
+            .nav-icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            .site-header a {
+                font-size: 0.7rem;
+            }
+
+            .contact-title {
+                height: 18px;
+            }
+
+            .contact-subtitle {
+                padding: 18px 15px;
+            }
+
             .contact-subtitle h1 {
                 font-size: 30px;
             }
@@ -270,34 +483,46 @@
                 font-size: 15px;
             }
 
+            .contact-section {
+                padding: 25px 18px;
+            }
+
+            .contact-form {
+                padding: 20px;
+                height: auto;
+                min-height: 480px;
+            }
+
             .contact-image {
-                height: 520px;
+                width: min(100%, 416px);
+                height: auto;
+                aspect-ratio: 4 / 5;
+            }
+
+            .submit-btn {
+                width: 100%;
+            }
+
+            .contact-actions {
+                margin-top: 15px;
+            }
+
+            .social-links {
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+
+            .site-footer {
+                padding: 1.5rem 0;
             }
         }
 
-        /* MOBILE */
-        @media (max-width: 767px) {
-            .navbar {
-                padding: 10px 4%;
-            }
 
-            .navbar-brand img {
-                width: 125px;
-            }
+        /* =========================================
+           SMALL MOBILE SCREENS
+        ========================================= */
 
-            .navbar-nav {
-                align-items: flex-start;
-                gap: 8px;
-                padding-top: 12px;
-            }
-
-            .contact-title {
-                height: 18px;
-            }
-
-            .contact-subtitle {
-                padding: 22px 12px;
-            }
+        @media (max-width: 480px) {
 
             .contact-subtitle h1 {
                 font-size: 27px;
@@ -308,256 +533,340 @@
             }
 
             .contact-section {
-                padding: 30px 5%;
+                padding: 20px 15px;
             }
 
             .contact-form {
+                padding: 18px;
                 min-height: auto;
-                padding: 24px 20px;
-            }
-
-            .contact-form .form-label {
-                font-size: 16px;
-            }
-
-            .contact-form .form-control {
-                font-size: 16px;
             }
 
             .contact-image {
                 width: min(100%, 416px);
-                height: auto;
                 aspect-ratio: 4 / 5;
-                margin-top: 30px;
-            }
-
-            .contact-actions {
-                margin-top: 15px;
-            }
-
-            .submit-btn {
-                width: 100%;
-            }
-
-            .social-links {
-                gap: 15px;
-                margin-top: 15px;
+                height: auto;
             }
 
             .social-links a {
-                font-size: 14px;
+                font-size: 11px;
             }
 
-            .footer-links {
-                gap: 18px;
+            .social-links i {
+                font-size: 22px;
             }
 
-            .footer-copyright {
-                font-size: 13px;
-            }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar navbar-expand-md navbar-dark">
-        <div class="container-fluid">
+<div class="contact-page">
 
-            <a class="navbar-brand" href="index.html">
-                <img src="img/ThreadedLogo-SimpleLight.png" alt="Threaded Logo">
-            </a>
 
-            <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarContent"
-                aria-controls="navbarContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- =========================================
+         HEADER AND NAVIGATION
+    ========================================= -->
 
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto">
+    <header class="site-header py-3">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <img src="img/home-icon-light.png" alt="">
+        <div class="container-fluid px-3 px-md-5 d-flex justify-content-between align-items-center">
+
+            <!-- LOGO -->
+
+            <div class="logo d-flex align-items-center">
+
+                <img src="img/ThreadedLogo-SimpleLight.png"
+                    alt="Threaded Logo"
+                    class="me-2"
+                    style="width: 83px; height: 83px; object-fit: contain;">
+
+                <span class="logo-text">
+                    Threaded
+                </span>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav>
+
+                <ul class="d-flex gap-4 list-unstyled mb-0 text-center">
+
+                    <li>
+                        <a href="index.html"
+                            class="d-flex flex-column align-items-center text-decoration-none">
+
+                            <img src="img/home-icon-light.png"
+                                alt="Home"
+                                class="nav-icon">
+
                             Home
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html">
-                            <img src="img/shop-icon-light.png" alt="">
+
+                    <li>
+                        <a href="index.html#products-section"
+                            class="d-flex flex-column align-items-center text-decoration-none">
+
+                            <img src="img/shop-icon-light.png"
+                                alt="Shop"
+                                class="nav-icon">
+
                             Shop
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html" aria-current="page">
-                            <img src="img/Contact-icon-light.png" alt="">
+
+                    <li>
+                        <a href="contact.html"
+                            class="d-flex flex-column align-items-center text-decoration-none">
+
+                            <img src="img/Contact-icon-light.png"
+                                alt="Contact"
+                                class="nav-icon">
+
                             Contact
                         </a>
                     </li>
 
                 </ul>
-            </div>
+
+            </nav>
+
         </div>
-    </nav>
 
-    <!-- TOP SPACER -->
-    <div class="contact-title"></div>
+    </header>
 
-    <!-- CONTACT HEADING -->
+
+
+    <!-- =========================================
+         EMPTY BEIGE SPACE
+    ========================================= -->
+
+    <section class="contact-title"></section>
+
+
+
+    <!-- =========================================
+         CONTACT US HEADING
+    ========================================= -->
+
     <section class="contact-subtitle">
+
         <h1>CONTACT US</h1>
+
         <p>Got a question?</p>
+
     </section>
 
-    <!-- CONTACT SECTION -->
+
+
+    <!-- =========================================
+         MAIN CONTACT SECTION
+    ========================================= -->
+
     <main class="contact-section">
 
         <div class="container-fluid">
-            <div class="row contact-row g-4">
 
-                <!-- LEFT COLUMN: CONTACT FORM -->
+            <div class="row g-4 align-items-start">
+
+
+                <!-- LEFT: CONTACT FORM -->
+
                 <div class="col-md-7">
 
                     <form class="contact-form" id="contactForm">
 
-                        <div class="row g-3">
+                        <div class="row">
 
-                            <div class="col-sm-6">
-                                <label for="firstName" class="form-label">
-                                    First Name
+                            <!-- FIRST NAME -->
+
+                            <div class="col-md-6">
+
+                                <label for="firstName">
+                                    Name (Optional)
                                 </label>
 
-                                <input
-                                    type="text"
+                                <input type="text"
                                     class="form-control"
                                     id="firstName"
                                     name="firstName"
-                                    placeholder="Enter your first name"
-                                    autocomplete="given-name"
-                                    required>
+                                    placeholder="First Name">
+
                             </div>
 
-                            <div class="col-sm-6">
-                                <label for="lastName" class="form-label">
-                                    Last Name
+
+                            <!-- LAST NAME -->
+
+                            <div class="col-md-6">
+
+                                <label for="lastName">
+                                    &nbsp;
                                 </label>
 
-                                <input
-                                    type="text"
+                                <input type="text"
                                     class="form-control"
                                     id="lastName"
                                     name="lastName"
-                                    placeholder="Enter your last name"
-                                    autocomplete="family-name"
-                                    required>
+                                    placeholder="Last Name">
+
                             </div>
 
-                            <div class="col-12">
-                                <label for="email" class="form-label">
+
+                            <!-- EMAIL ADDRESS -->
+
+                            <div class="col-md-6">
+
+                                <label for="email">
                                     Email Address
                                 </label>
 
-                                <input
-                                    type="email"
+                                <input type="email"
                                     class="form-control"
                                     id="email"
                                     name="email"
                                     placeholder="Enter your email address"
-                                    autocomplete="email"
                                     required>
+
                             </div>
 
-                            <div class="col-12">
-                                <label for="mobile" class="form-label">
-                                    Mobile Number (Optional)
+
+                            <!-- MOBILE NUMBER -->
+
+                            <div class="col-md-6">
+
+                                <label for="mobile">
+                                    Mobile Number
                                 </label>
 
-                                <input
-                                    type="tel"
+                                <input type="tel"
                                     class="form-control"
                                     id="mobile"
                                     name="mobile"
-                                    placeholder="Enter your mobile number"
-                                    autocomplete="tel">
+                                    placeholder="Enter your mobile number">
+
                             </div>
 
+
+                            <!-- MESSAGE -->
+
                             <div class="col-12">
-                                <label for="message" class="form-label">
+
+                                <label for="message">
                                     Message
                                 </label>
 
-                                <textarea
-                                    class="form-control"
+                                <textarea class="form-control"
                                     id="message"
                                     name="message"
+                                    rows="6"
                                     placeholder="Write your message here..."
                                     required></textarea>
+
                             </div>
 
                         </div>
+
                     </form>
 
-                    <!-- SUBMIT BUTTON -->
-                    <div class="contact-actions">
+                </div>
 
-                        <button
-                            type="submit"
+
+
+                <!-- RIGHT: REAL IMAGE -->
+
+                <div class="col-md-5">
+
+                    <img src="img/TSHIRTS%20DESIGN.png"
+                        alt="Threaded T-shirt Designs"
+                        class="contact-image">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 SUBMIT BUTTON AND SOCIAL MEDIA
+            ========================================= -->
+
+            <div class="row g-4 contact-actions align-items-start">
+
+
+                <!-- SUBMIT BUTTON -->
+
+                <div class="col-md-7">
+
+                    <div class="text-center">
+
+                        <button type="submit"
                             form="contactForm"
-                            class="submit-btn">
+                            class="btn submit-btn">
+
                             SUBMIT
+
                         </button>
 
-                        <p
-                            class="form-feedback"
-                            id="formFeedback"
-                            role="status"
-                            aria-live="polite">
-                        </p>
+                    </div>
+
+
+                    <!-- SUBMISSION NOTIFICATION -->
+
+                    <div class="form-feedback"
+                        id="formFeedback"
+                        role="status"
+                        aria-live="polite">
 
                     </div>
 
                 </div>
 
-                <!-- RIGHT COLUMN: IMAGE AND SOCIAL MEDIA -->
+
+
+                <!-- SOCIAL MEDIA LINKS -->
+
                 <div class="col-md-5">
 
-                    <img
-                        src="img/TSHIRTS%20DESIGN.png"
-                        alt="Threaded T-shirt designs"
-                        class="contact-image">
-
-                    <!-- SOCIAL MEDIA LINKS -->
-                    <div class="contact-actions social-links">
+                    <div class="social-links">
 
                         <a href="https://www.facebook.com/"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit Facebook">
+                            rel="noopener noreferrer">
+
                             <i class="bi bi-facebook"></i>
+
                             Facebook
+
                         </a>
+
 
                         <a href="https://www.instagram.com/"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit Instagram">
+                            rel="noopener noreferrer">
+
                             <i class="bi bi-instagram"></i>
+
                             Instagram
+
                         </a>
+
 
                         <a href="https://www.tiktok.com/"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit TikTok">
+                            rel="noopener noreferrer">
+
                             <i class="bi bi-tiktok"></i>
+
                             TikTok
+
                         </a>
 
                     </div>
@@ -565,93 +874,171 @@
                 </div>
 
             </div>
+
         </div>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer>
 
-        <div class="footer-links">
 
-            <a href="privacy.html">
-                <img src="img/privacypolicy-icon-light.png" alt="">
-                Privacy Policy
-            </a>
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
 
-            <a href="terms.html">
-                <img src="img/termsandcondition-icon-light.png" alt="">
-                Terms and Conditions
-            </a>
+    <footer class="site-footer text-center">
 
-        </div>
+        <div class="container-fluid px-5">
 
-        <div class="footer-copyright">
-            © 2026 Threaded. All Rights Reserved.
+            <p class="mb-1">
+                ©2026 THREADED All Rights Reserved
+            </p>
+
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+
+                <a href="privacy.html"
+                    class="d-inline-flex align-items-center">
+
+                    <img src="img/privacypolicy-icon-light.png"
+                        alt="Privacy Policy Icon"
+                        class="footer-icon me-1">
+
+                    Privacy Policy
+
+                </a>
+
+
+                <a href="terms.html"
+                    class="d-inline-flex align-items-center">
+
+                    <img src="img/termsandcondition-icon-light.png"
+                        alt="Terms and Conditions Icon"
+                        class="footer-icon me-1">
+
+                    Terms and Condition
+
+                </a>
+
+            </div>
+
         </div>
 
     </footer>
 
-    <!-- BOOTSTRAP JAVASCRIPT -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- CONTACT FORM MAILTO FUNCTION -->
-    <script>
-        const contactForm = document.getElementById("contactForm");
-        const formFeedback = document.getElementById("formFeedback");
+</div>
 
-        contactForm.addEventListener("submit", function(event) {
 
-            // Prevent the form from refreshing the page
-            event.preventDefault();
 
-            // Collect the visitor's information
-            const firstName = document.getElementById("firstName").value.trim();
-            const lastName = document.getElementById("lastName").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const mobile = document.getElementById("mobile").value.trim();
-            const message = document.getElementById("message").value.trim();
+<!-- =========================================
+     JAVASCRIPT: CONTACT FORM
+========================================= -->
 
-            // Email recipient
-            const recipient = "hello@examplewebsite142.com";
+<script>
 
-            // Generate inquiry reference number
-            const inquiryNumber = Date.now().toString().slice(-6);
+    const contactForm = document.getElementById("contactForm");
 
-            // Prepare email subject
-            const subject = encodeURIComponent(
-                `THREADED-Inquiry [${inquiryNumber}]`
-            );
+    const formFeedback = document.getElementById("formFeedback");
 
-            // Prepare email body
-            const body = encodeURIComponent(
-                "THREADED - CUSTOMER INQUIRY\n\n" +
-                "Inquiry Reference: #" + inquiryNumber + "\n\n" +
-                "Name: " + firstName + " " + lastName + "\n" +
-                "Email Address: " + email + "\n" +
-                "Mobile Number: " + (mobile || "Not provided") + "\n\n" +
-                "Message:\n" + message
-            );
 
-            // Display submission instructions
-            formFeedback.textContent =
-                "Your email application will open with your inquiry prepared " +
-                "and addressed to " + recipient +
-                ". Please click SEND in your email application to complete your submission.";
+    contactForm.addEventListener("submit", function(event) {
 
-            formFeedback.classList.add("show");
+        event.preventDefault();
 
-            // Create the mailto link
-            const mailtoLink =
-                "mailto:" + recipient +
-                "?subject=" + subject +
-                "&body=" + body;
 
-            // Open the visitor's default email application
-            window.location.href = mailtoLink;
+        // GET FORM VALUES
 
-        });
-    </script>
+        const firstName = document.getElementById("firstName").value.trim();
+
+        const lastName = document.getElementById("lastName").value.trim();
+
+        const email = document.getElementById("email").value.trim();
+
+        const mobile = document.getElementById("mobile").value.trim();
+
+        const message = document.getElementById("message").value.trim();
+
+
+        // EMAIL RECIPIENT
+
+        const recipient = "hello@examplewebsite142.com";
+
+
+        // GENERATE INQUIRY REFERENCE NUMBER
+
+        const inquiryNumber = Date.now().toString().slice(-6);
+
+
+        // EMAIL SUBJECT
+
+        const subject = encodeURIComponent(
+            `THREADED-Inquiry [${inquiryNumber}]`
+        );
+
+
+        // EMAIL BODY
+
+        const body = encodeURIComponent(
+
+            "THREADED - CUSTOMER INQUIRY\n\n" +
+
+            "Inquiry Reference: #" + inquiryNumber + "\n\n" +
+
+            "Name: " + firstName + " " + lastName + "\n" +
+
+            "Email Address: " + email + "\n" +
+
+            "Mobile Number: " + (mobile || "Not provided") + "\n\n" +
+
+            "Message:\n" + message
+
+        );
+
+
+        // DISPLAY NOTIFICATION
+
+        formFeedback.textContent =
+            "Your email application will open with a prepared message addressed to " +
+            recipient +
+            ". Please review your inquiry and click SEND to complete your submission.";
+
+        formFeedback.classList.add("show");
+
+
+        // CREATE EMAIL LINK
+
+        const mailtoLink =
+            "mailto:" + recipient +
+            "?subject=" + subject +
+            "&body=" + body;
+
+
+        // INFORM VISITOR BEFORE OPENING EMAIL APPLICATION
+
+        alert(
+            "THANK YOU FOR CONTACTING THREADED!\n\n" +
+            "Your email application will open with your inquiry already prepared.\n\n" +
+            "Recipient: " + recipient + "\n" +
+            "Subject: THREADED-Inquiry [" + inquiryNumber + "]\n\n" +
+            "Please click SEND in your email application to complete your submission."
+        );
+
+
+        // OPEN DEFAULT EMAIL APPLICATION
+
+        window.location.href = mailtoLink;
+
+    });
+
+</script>
+
+
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
 
 </body>
+
 </html>

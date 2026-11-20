@@ -58,10 +58,8 @@
             background-color: var(--bg-beige);
             font-family: var(--font-body);
             color: var(--primary-green);
-
             display: flex;
             flex-direction: column;
-
             min-height: 100vh;
         }
 
@@ -75,12 +73,7 @@
             flex-grow: 1;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
             color: var(--primary-green);
         }
@@ -90,78 +83,52 @@
         }
 
 
-		/* =========================================
-		   HEADER AND FOOTER
-		========================================= */
-		
-		.contact-page .site-header {
-		    background-image: url('img/headerfooter-bg.jpg');
-		    background-size: cover;
-		    background-position: center;
-		    background-repeat: no-repeat;
-		    color: #DCD7C9;
-		    width: 100%;
-		    height: 100px;
-		    display: flex;
-		    align-items: center;
-		}
-		
-		.contact-page .logo-text {
-		    font-family: var(--font-logo);
-		    font-size: 32px;
-		    font-weight: 400;
-		    font-variation-settings: 'XROT' 13, 'YROT' 45;
-		    color: #DCD7C9;
-		}
-				
-		.contact-page .site-footer {
-		    background-image: url('img/headerfooter-bg.jpg');
-		    background-size: cover;
-		    background-position: center;
-		    background-repeat: no-repeat;
-		    margin-top: auto;
-		    height: auto; 
-		    min-height: 70px;
-		    display: flex;
-		    flex-direction: column;
-		    justify-content: center;
-		    padding: 1.5rem 0;
-		    font-size: 15px;
-		}
-		
-		.contact-page .site-footer p {
-		    color: #DCD7C9;
-		}
-		
-		.contact-page .nav-icon {
-		    width: 50px;
-		    height: 50px; 
-		    margin-bottom: 5px;
-		    object-fit: contain;
-		}
-		
-		.contact-page .footer-icon {
-		    width: 25px;
-		    height: 25px;
-		    object-fit: contain;
-		}
-		
-		.contact-page .site-header a {
-		    color: #DCD7C9 !important;
-		    text-decoration: none;
-		    font-size: 20px;
-		}
-		
-		.contact-page .site-footer a {
-		    color: #DCD7C9 !important;
-		    text-decoration: none;
-		}
-		
-		.contact-page .site-header a:hover, 
-		.contact-page .site-footer a:hover {
-		    color: var(--brand-tan) !important;
-		}
-		
+        /* =========================================
+           HEADER AND NAVIGATION
+        ========================================= */
+
+        .site-header {
+            background-color: rgba(44, 57, 48, 0.85);
+            background-image: url('img/headerfooter-bg.jpg');
+            background-repeat: repeat;
+            background-position: center center;
+
+            color: var(--bg-beige);
+            width: 100%;
+            height: 100px;
+
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            font-family: var(--font-logo);
+            font-weight: 400;
+            font-variation-settings: 'XROT' 13, 'YROT' 45;
+            color: var(--bg-beige);
+            font-size: 32px;
+        }
+
+        .site-header a {
+            color: var(--bg-beige);
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .site-header a:hover {
+            color: var(--brand-tan);
+        }
+
+        .nav-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+            object-fit: contain;
+        }
+
+
         /* =========================================
            EMPTY BEIGE SPACE
         ========================================= */
@@ -169,43 +136,33 @@
         .contact-title {
             width: 100%;
             height: 25px;
-
             background-color: var(--bg-beige);
         }
 
 
         /* =========================================
-           GREEN CONTACT HEADING
+           CONTACT US HEADING
         ========================================= */
 
         .contact-subtitle {
             width: 100%;
-
             background-color: var(--primary-green);
-
             text-align: center;
-
             padding: 20px 15px;
         }
 
         .contact-subtitle h1 {
             font-family: var(--font-heading);
-
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
-
             color: var(--bg-beige);
-
             margin-bottom: 7px;
         }
 
         .contact-subtitle p {
             font-family: var(--font-body);
-
             font-size: 17px;
-
             color: var(--bg-beige);
-
             margin: 0;
         }
 
@@ -216,11 +173,8 @@
 
         .contact-section {
             width: 100%;
-
             flex-grow: 1;
-
             padding: 35px 5%;
-
             background-color: var(--bg-beige);
         }
 
@@ -231,9 +185,7 @@
 
         .contact-form {
             background-color: var(--primary-green);
-
             padding: 30px;
-
             height: 520px;
             min-height: 520px;
             width: 100%;
@@ -241,12 +193,9 @@
 
         .contact-form label {
             display: block;
-
             color: #E8E8DF;
-
             font-family: var(--font-body);
             font-size: 13px;
-
             margin-bottom: 9px;
         }
 
@@ -257,17 +206,12 @@
 
         .contact-form .form-control {
             background-color: #526357;
-
             color: white;
-
             border: none;
             border-radius: 0;
-
             font-family: var(--font-heading);
             font-size: 14px;
-
             margin-bottom: 18px;
-
             padding: 13px;
         }
 
@@ -278,9 +222,7 @@
 
         .contact-form .form-control:focus {
             background-color: #526357;
-
             color: white;
-
             box-shadow: 0 0 0 2px var(--brand-tan);
         }
 
@@ -291,25 +233,52 @@
 
 
         /* =========================================
+           REAL CONTACT IMAGE
+           416 X 520 PX
+        ========================================= */
+
+        .contact-image {
+            display: block;
+            width: 416px;
+            max-width: 100%;
+            height: 520px;
+            margin: 0 auto;
+
+            object-fit: cover;
+            object-position: center;
+
+            border: 1px solid #99958D;
+        }
+
+
+        /* =========================================
+           BOTTOM ACTION ROW
+           SUBMIT BUTTON AND SOCIAL MEDIA
+        ========================================= */
+
+        .contact-actions {
+            margin-top: 18px;
+        }
+
+
+        /* =========================================
            SUBMIT BUTTON
+           OUTSIDE GREEN FORM PANEL
         ========================================= */
 
         .submit-btn {
             background-color: var(--brand-tan);
-
             color: white;
 
             border: none;
             border-radius: 0;
 
             width: 60%;
-
             padding: 12px;
 
             font-family: var(--font-heading);
             font-size: 12px;
             font-weight: 700;
-
             letter-spacing: 1px;
 
             transition: 0.3s;
@@ -320,52 +289,33 @@
             color: white;
         }
 
+        .submit-btn:active {
+            background-color: var(--primary-green) !important;
+            color: white !important;
+        }
+
 
         /* =========================================
-           PORTRAIT IMAGE PLACEHOLDER
-           SAME HEIGHT AS CONTACT FORM
+           SUBMISSION FEEDBACK
         ========================================= */
 
-        .contact-image {
+        .form-feedback {
+            display: none;
+            background-color: var(--primary-green);
+            color: var(--bg-beige);
+
+            padding: 12px 15px;
+            margin-top: 12px;
+
+            font-family: var(--font-body);
+            font-size: 12px;
+            line-height: 1.6;
+
+            border-left: 4px solid var(--brand-tan);
+        }
+
+        .form-feedback.show {
             display: block;
-
-            position: relative;
-
-            width: 416px;
-            max-width: 100%;
-
-            height: 520px;
-
-            margin: 0 auto;
-
-            background-color: #C9C9C9;
-
-            border: 1px solid #99958D;
-
-            overflow: hidden;
-        }
-
-        .contact-image::before,
-        .contact-image::after {
-            content: "";
-
-            position: absolute;
-
-            width: 141.5%;
-            height: 1px;
-
-            background-color: #99958D;
-
-            top: 50%;
-            left: -20.75%;
-        }
-
-        .contact-image::before {
-            transform: rotate(45deg);
-        }
-
-        .contact-image::after {
-            transform: rotate(-45deg);
         }
 
 
@@ -375,33 +325,23 @@
 
         .social-links {
             display: flex;
-
             justify-content: space-around;
             align-items: center;
-
             text-align: center;
-
-            margin-top: 18px;
         }
 
         .social-links a {
             color: var(--primary-green);
-
             text-decoration: none;
-
             font-family: var(--font-heading);
             font-size: 13px;
-
             transition: 0.3s;
         }
 
         .social-links i {
             display: block;
-
             color: var(--primary-green);
-
             font-size: 25px;
-
             margin-bottom: 5px;
         }
 
@@ -409,6 +349,49 @@
         .social-links a:hover i {
             color: var(--brand-tan);
         }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .site-footer {
+            background-image: url('img/headerfooter-bg.jpg');
+            background-size: cover;
+            background-position: center;
+
+            margin-top: auto;
+            height: auto;
+            min-height: 70px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 1.5rem 0;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .site-footer p {
+            color: var(--bg-beige);
+        }
+
+        .site-footer a {
+            color: var(--bg-beige);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            color: var(--brand-tan);
+        }
+
+        .footer-icon {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+        }
+
 
         /* =========================================
            ACCESSIBILITY
@@ -424,12 +407,10 @@
 
 
         /* =========================================
-           RESPONSIVE DESIGN - TABLET AND MOBILE
+           TABLET AND MOBILE RESPONSIVENESS
         ========================================= */
 
         @media (max-width: 768px) {
-
-            /* HEADER */
 
             .site-header {
                 height: 80px;
@@ -464,9 +445,6 @@
                 font-size: 0.7rem;
             }
 
-
-            /* CONTACT HEADING */
-
             .contact-title {
                 height: 18px;
             }
@@ -476,15 +454,12 @@
             }
 
             .contact-subtitle h1 {
-                font-size: 27px;
+                font-size: 30px;
             }
 
             .contact-subtitle p {
                 font-size: 15px;
             }
-
-
-            /* CONTACT SECTION */
 
             .contact-section {
                 padding: 25px 18px;
@@ -506,17 +481,18 @@
                 width: 100%;
             }
 
-            .social-links {
-                margin-bottom: 10px;
+            .contact-actions {
+                margin-top: 15px;
             }
 
-
-            /* FOOTER */
+            .social-links {
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
 
             .site-footer {
                 padding: 1.5rem 0;
             }
-
         }
 
 
@@ -527,7 +503,7 @@
         @media (max-width: 480px) {
 
             .contact-subtitle h1 {
-                font-size: 24px;
+                font-size: 27px;
             }
 
             .contact-subtitle p {
@@ -577,21 +553,17 @@
 
         <div class="container-fluid px-3 px-md-5 d-flex justify-content-between align-items-center">
 
-
             <!-- LOGO -->
 
             <div class="logo d-flex align-items-center">
 
                 <img src="img/ThreadedLogo-SimpleLight.png"
-                    alt="Threaded Logo Simple Light"
+                    alt="Threaded Logo"
                     class="me-2"
                     style="width: 83px; height: 83px; object-fit: contain;">
 
-                <span class="logo-text"
-                    style="font-family: 'Tilt Neon', sans-serif; font-variation-settings: 'XROT' 13, 'YROT' 45;">
-
+                <span class="logo-text">
                     Threaded
-
                 </span>
 
             </div>
@@ -603,11 +575,7 @@
 
                 <ul class="d-flex gap-4 list-unstyled mb-0 text-center">
 
-
-                    <!-- HOME -->
-
                     <li>
-
                         <a href="index.html"
                             class="d-flex flex-column align-items-center text-decoration-none">
 
@@ -616,16 +584,11 @@
                                 class="nav-icon">
 
                             Home
-
                         </a>
-
                     </li>
 
 
-                    <!-- SHOP -->
-
                     <li>
-
                         <a href="index.html#products-section"
                             class="d-flex flex-column align-items-center text-decoration-none">
 
@@ -634,16 +597,11 @@
                                 class="nav-icon">
 
                             Shop
-
                         </a>
-
                     </li>
 
 
-                    <!-- CONTACT -->
-
                     <li>
-
                         <a href="contact.html"
                             class="d-flex flex-column align-items-center text-decoration-none">
 
@@ -652,9 +610,7 @@
                                 class="nav-icon">
 
                             Contact
-
                         </a>
-
                     </li>
 
                 </ul>
@@ -668,17 +624,15 @@
 
 
     <!-- =========================================
-         EMPTY BEIGE SPACE ABOVE HEADING
+         EMPTY BEIGE SPACE
     ========================================= -->
 
-    <section class="contact-title">
-
-    </section>
+    <section class="contact-title"></section>
 
 
 
     <!-- =========================================
-         GREEN CONTACT US HEADING
+         CONTACT US HEADING
     ========================================= -->
 
     <section class="contact-subtitle">
@@ -702,14 +656,15 @@
             <div class="row g-4 align-items-start">
 
 
-                <!-- LEFT COLUMN: CONTACT FORM -->
+                <!-- =================================
+                     LEFT: CONTACT FORM
+                ================================= -->
 
                 <div class="col-md-7">
 
                     <form class="contact-form" id="contactForm">
 
                         <div class="row">
-
 
                             <!-- FIRST NAME -->
 
@@ -799,44 +754,69 @@
 
                         </div>
 
-
-                        <!-- SUBMIT BUTTON -->
-
-                        <div class="text-center mt-2">
-
-                            <button type="submit" class="btn submit-btn">
-
-                                SUBMIT
-
-                            </button>
-
-                        </div>
-
                     </form>
 
                 </div>
 
 
 
-                <!-- RIGHT COLUMN: IMAGE AND SOCIAL MEDIA -->
+                <!-- =================================
+                     RIGHT: REAL IMAGE
+                ================================= -->
 
                 <div class="col-md-5">
 
+                    <img src="img/TSHIRTS%20DESIGN.png"
+                        alt="Threaded T-shirt Designs"
+                        class="contact-image">
 
-                    <!-- PORTRAIT IMAGE PLACEHOLDER -->
+                </div>
 
-                    <div class="contact-image"
-                        role="img"
-                        aria-label="Contact Us image placeholder">
+            </div>
+
+
+
+            <!-- =========================================
+                 BOTTOM ROW: SUBMIT AND SOCIAL MEDIA
+            ========================================= -->
+
+            <div class="row g-4 contact-actions align-items-start">
+
+
+                <!-- SUBMIT BUTTON OUTSIDE GREEN PANEL -->
+
+                <div class="col-md-7">
+
+                    <div class="text-center">
+
+                        <button type="submit"
+                            form="contactForm"
+                            class="btn submit-btn">
+
+                            SUBMIT
+
+                        </button>
 
                     </div>
 
+                    <!-- SUBMISSION FEEDBACK -->
+
+                    <div class="form-feedback"
+                        id="formFeedback"
+                        role="status"
+                        aria-live="polite">
+
+                    </div>
+
+                </div>
 
 
-                    <!-- SOCIAL MEDIA LINKS -->
+
+                <!-- SOCIAL MEDIA LINKS -->
+
+                <div class="col-md-5">
 
                     <div class="social-links">
-
 
                         <!-- FACEBOOK -->
 
@@ -896,18 +876,11 @@
 
         <div class="container-fluid px-5">
 
-
-            <!-- COPYRIGHT -->
-
             <p class="mb-1">
-
                 ©2026 THREADED All Rights Reserved
-
             </p>
 
-
             <div class="d-flex justify-content-center gap-4 flex-wrap">
-
 
                 <!-- PRIVACY POLICY -->
 
@@ -929,7 +902,7 @@
                     class="d-inline-flex align-items-center">
 
                     <img src="img/termsandcondition-icon-light.png"
-                        alt="Terms and Condition Icon"
+                        alt="Terms and Conditions Icon"
                         class="footer-icon me-1">
 
                     Terms and Condition
@@ -954,6 +927,9 @@
 <script>
 
     const contactForm = document.getElementById("contactForm");
+
+    const formFeedback = document.getElementById("formFeedback");
+
 
     contactForm.addEventListener("submit", function(event) {
 
@@ -1002,12 +978,19 @@
         );
 
 
+        // DISPLAY FEEDBACK
+
+        formFeedback.textContent =
+            "Your message has been prepared! Please send it through your email application to complete your submission.";
+
+        formFeedback.classList.add("show");
+
+
         // OPEN DEFAULT EMAIL APPLICATION
 
         const mailtoLink = "mailto:" + recipient +
             "?subject=" + subject +
             "&body=" + body;
-
 
         window.location.href = mailtoLink;
 

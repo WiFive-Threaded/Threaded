@@ -1,259 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Threaded</title>
 
-    <title>Threaded - Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- BOOTSTRAP CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lexend:wght@300;400;700&family=Tilt+Neon:XROT,YROT@-45..45,-45..45&display=swap"
-        rel="stylesheet">
-
-    <!-- BOOTSTRAP ICONS -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&family=Tilt+Neon&display=swap" rel="stylesheet">
 
     <style>
-
-        /* =========================================
-           GENERAL WEBSITE STYLES
-        ========================================= */
-
         :root {
             --primary-green: #2C3930;
             --secondary-green: #3F4F44;
             --brand-tan: #A27B5C;
             --bg-beige: #DCD7C9;
-
-            --font-heading: 'Lexend', sans-serif;
-            --font-body: 'Comfortaa', sans-serif;
-            --font-logo: 'Tilt Neon', sans-serif;
         }
 
-        *,
-        *::before,
-        *::after {
+        * {
             box-sizing: border-box;
+        }
+
+        body {
             margin: 0;
-            padding: 0;
-        }
-
-        html,
-        body {
-            min-height: 100%;
-        }
-
-        body {
             background-color: var(--bg-beige);
-            font-family: var(--font-body);
             color: var(--primary-green);
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            background-image: url("img/headerfooter-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 12px 5%;
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            height: auto;
+        }
+
+        .navbar-nav {
+            align-items: center;
+            gap: 25px;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-family: 'Lexend', sans-serif;
+            font-size: 15px;
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            align-items: center;
+            gap: 8px;
         }
 
-        .contact-page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        .navbar-nav .nav-link img {
+            width: 23px;
+            height: 23px;
+            object-fit: contain;
         }
 
-        main {
-            flex-grow: 1;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: var(--font-heading);
-            color: var(--primary-green);
-        }
-
-        a {
-            color: var(--primary-green);
-        }
-
-
-        /* =========================================
-           HEADER AND NAVIGATION
-        ========================================= */
-
-		.contact-page .site-header {
-		    background-image: url('img/headerfooter-bg.jpg');
-		    background-size: cover;
-		    background-position: center;
-		    background-repeat: no-repeat;
-		    color: #DCD7C9;
-		    width: 100%;
-		    height: 100px;
-		    display: flex;
-		    align-items: center;
-		}
-		
-		.contact-page .logo-text {
-		    font-family: var(--font-logo);
-		    font-size: 32px;
-		    font-weight: 400;
-		    font-variation-settings: 'XROT' 13, 'YROT' 45;
-		    color: #DCD7C9;
-		}
-				
-		.contact-page .site-footer {
-		    background-image: url('img/headerfooter-bg.jpg');
-		    background-size: cover;
-		    background-position: center;
-		    background-repeat: no-repeat;
-		    margin-top: auto;
-		    height: auto; 
-		    min-height: 70px;
-		    display: flex;
-		    flex-direction: column;
-		    justify-content: center;
-		    padding: 1.5rem 0;
-		    font-size: 15px;
-		}
-		
-		.contact-page .site-footer p {
-		    color: #DCD7C9;
-		}
-		
-		.contact-page .nav-icon {
-		    width: 50px;
-		    height: 50px; 
-		    margin-bottom: 5px;
-		    object-fit: contain;
-		}
-		
-		.contact-page .footer-icon {
-		    width: 25px;
-		    height: 25px;
-		    object-fit: contain;
-		}
-		
-		.contact-page .site-header a {
-		    color: #DCD7C9 !important;
-		    text-decoration: none;
-		    font-size: 20px;
-		}
-		
-		.contact-page .site-footer a {
-		    color: #DCD7C9 !important;
-		    text-decoration: none;
-		}
-		
-		.contact-page .site-header a:hover, 
-		.contact-page .site-footer a:hover {
-		    color: var(--brand-tan) !important;
-		}
-
-        /* =========================================
-           EMPTY BEIGE SPACE
-        ========================================= */
-
+        /* TOP SPACER */
         .contact-title {
-            width: 100%;
             height: 25px;
             background-color: var(--bg-beige);
         }
 
-
-        /* =========================================
-           CONTACT US HEADING
-        ========================================= */
-
+        /* CONTACT HEADING */
         .contact-subtitle {
-            width: 100%;
             background-color: var(--primary-green);
+            color: white;
             text-align: center;
-            padding: 20px 15px;
+            padding: 25px 15px;
         }
 
         .contact-subtitle h1 {
-            font-family: var(--font-heading);
+            font-family: 'Lexend', sans-serif;
             font-size: 36px;
             font-weight: 700;
-            color: var(--bg-beige);
-            margin-bottom: 7px;
+            margin-bottom: 8px;
         }
 
         .contact-subtitle p {
-            font-family: var(--font-body);
             font-size: 17px;
-            color: var(--bg-beige);
             margin: 0;
         }
 
-
-        /* =========================================
-           MAIN CONTACT SECTION
-        ========================================= */
-
+        /* MAIN CONTACT SECTION */
         .contact-section {
-            width: 100%;
-            flex-grow: 1;
-            padding: 35px 5%;
             background-color: var(--bg-beige);
+            padding: 45px 5%;
         }
 
+        .contact-row {
+            align-items: stretch;
+        }
 
-        /* =========================================
-           CONTACT FORM
-        ========================================= */
-
+        /* CONTACT FORM PANEL */
         .contact-form {
             background-color: var(--primary-green);
+            color: white;
             padding: 30px;
-            height: 520px;
-            min-height: 520px;
             width: 100%;
+            min-height: 520px;
+            border-radius: 4px;
         }
 
-        .contact-form label {
-            display: block;
-            color: #E8E8DF;
-            font-family: var(--font-body);
-            font-size: 13px;
-            margin-bottom: 9px;
+        .contact-form .form-label {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 8px;
         }
-
-
-        /* =========================================
-           FORM INPUT FIELDS
-        ========================================= */
 
         .contact-form .form-control {
-            background-color: #526357;
-            color: white;
-            border: none;
-            border-radius: 0;
-            font-family: var(--font-heading);
-            font-size: 14px;
-            margin-bottom: 18px;
-            padding: 13px;
-        }
-
-        .contact-form .form-control::placeholder {
-            color: var(--bg-beige);
-            opacity: 1;
+            font-family: 'Comfortaa', sans-serif;
+            font-size: 16px;
+            padding: 11px 13px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
         }
 
         .contact-form .form-control:focus {
-            background-color: #526357;
-            color: white;
-            box-shadow: 0 0 0 2px var(--brand-tan);
+            border-color: var(--brand-tan);
+            box-shadow: 0 0 0 0.2rem rgba(162, 123, 92, 0.25);
         }
 
         .contact-form textarea {
@@ -261,188 +136,167 @@
             min-height: 130px;
         }
 
-
-        /* =========================================
-           REAL CONTACT IMAGE
-           416 X 520 PX
-        ========================================= */
-
+        /* CONTACT IMAGE */
         .contact-image {
-            display: block;
-            width: 416px;
-            max-width: 100%;
+            width: 100%;
+            max-width: 416px;
             height: 520px;
-            margin: 0 auto;
-
             object-fit: cover;
             object-position: center;
-
-            border: 1px solid #99958D;
+            border: 3px solid var(--primary-green);
+            display: block;
+            margin: 0 auto;
         }
 
-
-        /* =========================================
-           BOTTOM ACTION ROW
-           SUBMIT BUTTON AND SOCIAL MEDIA
-        ========================================= */
-
+        /* BOTTOM ACTIONS */
         .contact-actions {
-            margin-top: 18px;
+            margin-top: 20px;
         }
-
-
-        /* =========================================
-           SUBMIT BUTTON
-           OUTSIDE GREEN FORM PANEL
-        ========================================= */
 
         .submit-btn {
             background-color: var(--brand-tan);
             color: white;
-
             border: none;
-            border-radius: 0;
-
+            border-radius: 3px;
             width: 60%;
-            padding: 12px;
-
-            font-family: var(--font-heading);
-            font-size: 12px;
+            padding: 14px 20px;
+            font-family: 'Lexend', sans-serif;
+            font-size: 16px;
             font-weight: 700;
-            letter-spacing: 1px;
-
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
         .submit-btn:hover {
-            background-color: #89694F;
+            background-color: var(--secondary-green);
             color: white;
         }
 
-        .submit-btn:active {
-            background-color: var(--primary-green) !important;
-            color: white !important;
+        .submit-btn:focus-visible {
+            outline: 3px solid var(--primary-green);
+            outline-offset: 3px;
         }
 
-
-        /* =========================================
-           SUBMISSION FEEDBACK
-        ========================================= */
-
+        /* FORM FEEDBACK */
         .form-feedback {
             display: none;
-            background-color: var(--primary-green);
-            color: var(--bg-beige);
-
-            padding: 12px 15px;
+            color: var(--primary-green);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
             margin-top: 12px;
-
-            font-family: var(--font-body);
-            font-size: 12px;
-            line-height: 1.6;
-
-            border-left: 4px solid var(--brand-tan);
         }
 
         .form-feedback.show {
             display: block;
         }
 
-
-        /* =========================================
-           SOCIAL MEDIA LINKS
-        ========================================= */
-
+        /* SOCIAL MEDIA */
         .social-links {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            text-align: center;
+            flex-wrap: wrap;
+            gap: 22px;
         }
 
         .social-links a {
             color: var(--primary-green);
             text-decoration: none;
-            font-family: var(--font-heading);
-            font-size: 13px;
-            transition: 0.3s;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: 0.3s ease;
         }
 
-        .social-links i {
-            display: block;
-            color: var(--primary-green);
-            font-size: 25px;
-            margin-bottom: 5px;
-        }
-
-        .social-links a:hover,
-        .social-links a:hover i {
+        .social-links a:hover {
             color: var(--brand-tan);
         }
 
-
-        /* =========================================
-           ACCESSIBILITY
-        ========================================= */
-
-        a:focus-visible,
-        button:focus-visible,
-        input:focus-visible,
-        textarea:focus-visible {
-            outline: 3px solid var(--brand-tan);
-            outline-offset: 2px;
+        .social-links i {
+            font-size: 22px;
         }
 
+        /* FOOTER */
+        footer {
+            background-image: url("img/headerfooter-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 25px 5%;
+            font-family: 'Comfortaa', sans-serif;
+        }
 
-        /* =========================================
-           RESPONSIVE DESIGN - TABLET AND MOBILE
-        ========================================= */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-@media (max-width: 768px) {
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
 
-            /* HEADER */
+        .footer-links a:hover {
+            color: var(--bg-beige);
+        }
 
-            .site-header {
-                height: 80px !important;
-                padding: 0 !important;
+        .footer-links img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 13px;
+        }
+
+        /* TABLET */
+        @media (max-width: 991px) {
+            .contact-subtitle h1 {
+                font-size: 30px;
             }
 
-            .site-header .container-fluid {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                padding: 0 10px !important;
+            .contact-subtitle p {
+                font-size: 15px;
             }
 
-            .site-header .logo img {
-                width: 45px !important;
-                height: 45px !important;
+            .contact-image {
+                height: 520px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 767px) {
+            .navbar {
+                padding: 10px 4%;
             }
 
-            .site-header .logo-text {
-                font-size: 1.2rem !important;
+            .navbar-brand img {
+                width: 125px;
             }
 
-            .site-header nav ul {
-                gap: 10px;
+            .navbar-nav {
+                align-items: flex-start;
+                gap: 8px;
+                padding-top: 12px;
             }
-
-            .nav-icon {
-                width: 25px !important;
-                height: 25px !important;
-            }
-
-            .site-header a {
-                font-size: 0.7rem !important;
-            }
-
-            /* CONTACT HEADING */
 
             .contact-title {
                 height: 18px;
             }
 
             .contact-subtitle {
-                padding: 18px 15px;
+                padding: 22px 12px;
             }
 
             .contact-subtitle h1 {
@@ -450,26 +304,35 @@
             }
 
             .contact-subtitle p {
-                font-size: 15px;
+                font-size: 14px;
             }
 
-
-            /* CONTACT SECTION */
-
             .contact-section {
-                padding: 25px 18px;
+                padding: 30px 5%;
             }
 
             .contact-form {
-                padding: 20px;
-                height: auto;
-                min-height: 480px;
+                min-height: auto;
+                padding: 24px 20px;
+            }
+
+            .contact-form .form-label {
+                font-size: 16px;
+            }
+
+            .contact-form .form-control {
+                font-size: 16px;
             }
 
             .contact-image {
                 width: min(100%, 416px);
                 height: auto;
                 aspect-ratio: 4 / 5;
+                margin-top: 30px;
+            }
+
+            .contact-actions {
+                margin-top: 15px;
             }
 
             .submit-btn {
@@ -477,397 +340,224 @@
             }
 
             .social-links {
-                margin-bottom: 10px;
-            }
-
-
-            /* FOOTER */
-
-            .site-footer {
-                padding: 1.5rem 0;
-            }
-
-        }
-
-
-        /* =========================================
-           SMALL MOBILE SCREENS
-        ========================================= */
-
-        @media (max-width: 480px) {
-
-            .contact-subtitle h1 {
-                font-size: 24px;
-            }
-
-            .contact-subtitle p {
-                font-size: 14px;
-            }
-
-            .contact-section {
-                padding: 20px 15px;
-            }
-
-            .contact-form {
-                padding: 18px;
-                min-height: auto;
-            }
-
-            .contact-image {
-                width: min(100%, 416px);
-                aspect-ratio: 4 / 5;
-                height: auto;
+                gap: 15px;
+                margin-top: 15px;
             }
 
             .social-links a {
-                font-size: 11px;
+                font-size: 14px;
             }
 
-            .social-links i {
-                font-size: 22px;
+            .footer-links {
+                gap: 18px;
             }
 
+            .footer-copyright {
+                font-size: 13px;
+            }
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-<div class="contact-page">
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-fluid">
 
+            <a class="navbar-brand" href="index.html">
+                <img src="img/ThreadedLogo-SimpleLight.png" alt="Threaded Logo">
+            </a>
 
-    <!-- =========================================
-         HEADER AND NAVIGATION
-    ========================================= -->
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarContent"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <header class="site-header py-3">
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
 
-        <div class="container-fluid px-3 px-md-5 d-flex justify-content-between align-items-center">
-
-
-            <!-- LOGO -->
-
-            <div class="logo d-flex align-items-center">
-
-                <img src="img/ThreadedLogo-SimpleLight.png"
-                    alt="Threaded Logo Simple Light"
-                    class="me-2"
-                    style="width: 83px; height: 83px; object-fit: contain;">
-
-                <span class="logo-text"
-                    style="font-family: 'Tilt Neon', sans-serif; font-variation-settings: 'XROT' 13, 'YROT' 45;">
-
-                    Threaded
-
-                </span>
-
-            </div>
-
-
-            <!-- NAVIGATION -->
-
-            <nav>
-
-                <ul class="d-flex gap-4 list-unstyled mb-0 text-center">
-
-
-                    <!-- HOME -->
-
-                    <li>
-
-                        <a href="index.html"
-                            class="d-flex flex-column align-items-center text-decoration-none">
-
-                            <img src="img/home-icon-light.png"
-                                alt="Home"
-                                class="nav-icon">
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <img src="img/home-icon-light.png" alt="">
                             Home
-
                         </a>
-
                     </li>
 
-
-                    <!-- SHOP -->
-
-                    <li>
-
-                        <a href="index.html#products-section"
-                            class="d-flex flex-column align-items-center text-decoration-none">
-
-                            <img src="img/shop-icon-light.png"
-                                alt="Shop"
-                                class="nav-icon">
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">
+                            <img src="img/shop-icon-light.png" alt="">
                             Shop
-
                         </a>
-
                     </li>
 
-
-                    <!-- CONTACT -->
-
-                    <li>
-
-                        <a href="contact.html"
-                            class="d-flex flex-column align-items-center text-decoration-none">
-
-                            <img src="img/Contact-icon-light.png"
-                                alt="Contact"
-                                class="nav-icon">
-
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html" aria-current="page">
+                            <img src="img/Contact-icon-light.png" alt="">
                             Contact
-
                         </a>
-
                     </li>
 
                 </ul>
-
-            </nav>
-
+            </div>
         </div>
+    </nav>
 
-    </header>
+    <!-- TOP SPACER -->
+    <div class="contact-title"></div>
 
-
-
-    <!-- =========================================
-         EMPTY BEIGE SPACE
-    ========================================= -->
-
-    <section class="contact-title"></section>
-
-
-
-    <!-- =========================================
-         CONTACT US HEADING
-    ========================================= -->
-
+    <!-- CONTACT HEADING -->
     <section class="contact-subtitle">
-
         <h1>CONTACT US</h1>
-
         <p>Got a question?</p>
-
     </section>
 
-
-
-    <!-- =========================================
-         MAIN CONTACT SECTION
-    ========================================= -->
-
+    <!-- CONTACT SECTION -->
     <main class="contact-section">
 
         <div class="container-fluid">
+            <div class="row contact-row g-4">
 
-            <div class="row g-4 align-items-start">
-
-
-                <!-- =================================
-                     LEFT: CONTACT FORM
-                ================================= -->
-
+                <!-- LEFT COLUMN: CONTACT FORM -->
                 <div class="col-md-7">
 
                     <form class="contact-form" id="contactForm">
 
-                        <div class="row">
+                        <div class="row g-3">
 
-                            <!-- FIRST NAME -->
-
-                            <div class="col-md-6">
-
-                                <label for="firstName">
-                                    Name (Optional)
+                            <div class="col-sm-6">
+                                <label for="firstName" class="form-label">
+                                    First Name
                                 </label>
 
-                                <input type="text"
+                                <input
+                                    type="text"
                                     class="form-control"
                                     id="firstName"
                                     name="firstName"
-                                    placeholder="First Name">
-
+                                    placeholder="Enter your first name"
+                                    autocomplete="given-name"
+                                    required>
                             </div>
 
-
-                            <!-- LAST NAME -->
-
-                            <div class="col-md-6">
-
-                                <label for="lastName">
-                                    &nbsp;
+                            <div class="col-sm-6">
+                                <label for="lastName" class="form-label">
+                                    Last Name
                                 </label>
 
-                                <input type="text"
+                                <input
+                                    type="text"
                                     class="form-control"
                                     id="lastName"
                                     name="lastName"
-                                    placeholder="Last Name">
-
+                                    placeholder="Enter your last name"
+                                    autocomplete="family-name"
+                                    required>
                             </div>
 
-
-                            <!-- EMAIL ADDRESS -->
-
-                            <div class="col-md-6">
-
-                                <label for="email">
+                            <div class="col-12">
+                                <label for="email" class="form-label">
                                     Email Address
                                 </label>
 
-                                <input type="email"
+                                <input
+                                    type="email"
                                     class="form-control"
                                     id="email"
                                     name="email"
                                     placeholder="Enter your email address"
+                                    autocomplete="email"
                                     required>
-
                             </div>
 
-
-                            <!-- MOBILE NUMBER -->
-
-                            <div class="col-md-6">
-
-                                <label for="mobile">
-                                    Mobile Number
+                            <div class="col-12">
+                                <label for="mobile" class="form-label">
+                                    Mobile Number (Optional)
                                 </label>
 
-                                <input type="tel"
+                                <input
+                                    type="tel"
                                     class="form-control"
                                     id="mobile"
                                     name="mobile"
-                                    placeholder="Enter your mobile number">
-
+                                    placeholder="Enter your mobile number"
+                                    autocomplete="tel">
                             </div>
 
-
-                            <!-- MESSAGE -->
-
                             <div class="col-12">
-
-                                <label for="message">
+                                <label for="message" class="form-label">
                                     Message
                                 </label>
 
-                                <textarea class="form-control"
+                                <textarea
+                                    class="form-control"
                                     id="message"
                                     name="message"
-                                    rows="6"
                                     placeholder="Write your message here..."
                                     required></textarea>
-
                             </div>
 
                         </div>
-
                     </form>
 
-                </div>
+                    <!-- SUBMIT BUTTON -->
+                    <div class="contact-actions">
 
-
-
-                <!-- =================================
-                     RIGHT: REAL IMAGE
-                ================================= -->
-
-                <div class="col-md-5">
-
-                    <img src="img/TSHIRTS%20DESIGN.png"
-                        alt="Threaded T-shirt Designs"
-                        class="contact-image">
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =========================================
-                 BOTTOM ROW: SUBMIT AND SOCIAL MEDIA
-            ========================================= -->
-
-            <div class="row g-4 contact-actions align-items-start">
-
-
-                <!-- SUBMIT BUTTON OUTSIDE GREEN PANEL -->
-
-                <div class="col-md-7">
-
-                    <div class="text-center">
-
-                        <button type="submit"
+                        <button
+                            type="submit"
                             form="contactForm"
-                            class="btn submit-btn">
-
+                            class="submit-btn">
                             SUBMIT
-
                         </button>
 
-                    </div>
-
-                    <!-- SUBMISSION FEEDBACK -->
-
-                    <div class="form-feedback"
-                        id="formFeedback"
-                        role="status"
-                        aria-live="polite">
+                        <p
+                            class="form-feedback"
+                            id="formFeedback"
+                            role="status"
+                            aria-live="polite">
+                        </p>
 
                     </div>
 
                 </div>
 
-
-
-                <!-- SOCIAL MEDIA LINKS -->
-
+                <!-- RIGHT COLUMN: IMAGE AND SOCIAL MEDIA -->
                 <div class="col-md-5">
 
-                    <div class="social-links">
+                    <img
+                        src="img/TSHIRTS%20DESIGN.png"
+                        alt="Threaded T-shirt designs"
+                        class="contact-image">
 
-                        <!-- FACEBOOK -->
+                    <!-- SOCIAL MEDIA LINKS -->
+                    <div class="contact-actions social-links">
 
                         <a href="https://www.facebook.com/"
                             target="_blank"
-                            rel="noopener noreferrer">
-
+                            rel="noopener noreferrer"
+                            aria-label="Visit Facebook">
                             <i class="bi bi-facebook"></i>
-
                             Facebook
-
                         </a>
-
-
-                        <!-- INSTAGRAM -->
 
                         <a href="https://www.instagram.com/"
                             target="_blank"
-                            rel="noopener noreferrer">
-
+                            rel="noopener noreferrer"
+                            aria-label="Visit Instagram">
                             <i class="bi bi-instagram"></i>
-
                             Instagram
-
                         </a>
-
-
-                        <!-- TIKTOK -->
 
                         <a href="https://www.tiktok.com/"
                             target="_blank"
-                            rel="noopener noreferrer">
-
+                            rel="noopener noreferrer"
+                            aria-label="Visit TikTok">
                             <i class="bi bi-tiktok"></i>
-
                             TikTok
-
                         </a>
 
                     </div>
@@ -875,183 +565,93 @@
                 </div>
 
             </div>
-
         </div>
 
     </main>
 
+    <!-- FOOTER -->
+    <footer>
 
+        <div class="footer-links">
 
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
+            <a href="privacy.html">
+                <img src="img/privacypolicy-icon-light.png" alt="">
+                Privacy Policy
+            </a>
 
-    <footer class="site-footer text-center">
+            <a href="terms.html">
+                <img src="img/termsandcondition-icon-light.png" alt="">
+                Terms and Conditions
+            </a>
 
-        <div class="container-fluid px-5">
+        </div>
 
-
-            <!-- COPYRIGHT -->
-
-            <p class="mb-1">
-
-                ©2026 THREADED All Rights Reserved
-
-            </p>
-
-
-            <div class="d-flex justify-content-center gap-4 flex-wrap">
-
-
-                <!-- PRIVACY POLICY -->
-
-                <a href="privacy.html"
-                    class="d-inline-flex align-items-center">
-
-                    <img src="img/privacypolicy-icon-light.png"
-                        alt="Privacy Policy Icon"
-                        class="footer-icon me-1">
-
-                    Privacy Policy
-
-                </a>
-
-
-                <!-- TERMS AND CONDITIONS -->
-
-                <a href="terms.html"
-                    class="d-inline-flex align-items-center">
-
-                    <img src="img/termsandcondition-icon-light.png"
-                        alt="Terms and Condition Icon"
-                        class="footer-icon me-1">
-
-                    Terms and Condition
-
-                </a>
-
-            </div>
-
+        <div class="footer-copyright">
+            © 2026 Threaded. All Rights Reserved.
         </div>
 
     </footer>
 
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- CONTACT FORM MAILTO FUNCTION -->
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const formFeedback = document.getElementById("formFeedback");
 
-</div>
+        contactForm.addEventListener("submit", function(event) {
 
+            // Prevent the form from refreshing the page
+            event.preventDefault();
 
+            // Collect the visitor's information
+            const firstName = document.getElementById("firstName").value.trim();
+            const lastName = document.getElementById("lastName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const message = document.getElementById("message").value.trim();
 
-<!-- =========================================
-     JAVASCRIPT: CONTACT FORM
-========================================= -->
+            // Email recipient
+            const recipient = "hello@examplewebsite142.com";
 
-<script>
+            // Generate inquiry reference number
+            const inquiryNumber = Date.now().toString().slice(-6);
 
-    const contactForm = document.getElementById("contactForm");
+            // Prepare email subject
+            const subject = encodeURIComponent(
+                `THREADED-Inquiry [${inquiryNumber}]`
+            );
 
-    const formFeedback = document.getElementById("formFeedback");
+            // Prepare email body
+            const body = encodeURIComponent(
+                "THREADED - CUSTOMER INQUIRY\n\n" +
+                "Inquiry Reference: #" + inquiryNumber + "\n\n" +
+                "Name: " + firstName + " " + lastName + "\n" +
+                "Email Address: " + email + "\n" +
+                "Mobile Number: " + (mobile || "Not provided") + "\n\n" +
+                "Message:\n" + message
+            );
 
+            // Display submission instructions
+            formFeedback.textContent =
+                "Your email application will open with your inquiry prepared " +
+                "and addressed to " + recipient +
+                ". Please click SEND in your email application to complete your submission.";
 
-    contactForm.addEventListener("submit", function(event) {
+            formFeedback.classList.add("show");
 
-        event.preventDefault();
+            // Create the mailto link
+            const mailtoLink =
+                "mailto:" + recipient +
+                "?subject=" + subject +
+                "&body=" + body;
 
+            // Open the visitor's default email application
+            window.location.href = mailtoLink;
 
-        // GET FORM VALUES
-
-        const firstName = document.getElementById("firstName").value.trim();
-
-        const lastName = document.getElementById("lastName").value.trim();
-
-        const email = document.getElementById("email").value.trim();
-
-        const mobile = document.getElementById("mobile").value.trim();
-
-        const message = document.getElementById("message").value.trim();
-
-
-        // EMAIL RECIPIENT
-
-        const recipient = "hello@examplewebsite142.com";
-
-
-        // GENERATE INQUIRY REFERENCE NUMBER
-
-        const inquiryNumber = Date.now().toString().slice(-6);
-
-
-        // EMAIL SUBJECT
-
-        const subject = encodeURIComponent(
-            `THREADED-Inquiry [${inquiryNumber}]`
-        );
-
-
-        // EMAIL BODY
-
-        const body = encodeURIComponent(
-
-            "THREADED - CUSTOMER INQUIRY\n\n" +
-
-            "Inquiry Reference: #" + inquiryNumber + "\n\n" +
-
-            "Name: " + firstName + " " + lastName + "\n" +
-
-            "Email Address: " + email + "\n" +
-
-            "Mobile Number: " + (mobile || "Not provided") + "\n\n" +
-
-            "Message:\n" + message
-
-        );
-
-
-        // DISPLAY NOTIFICATION
-
-        formFeedback.textContent =
-            "Your email application will open with a prepared message addressed to " +
-            recipient +
-            ". Please review your inquiry and click SEND to complete your submission.";
-
-        formFeedback.classList.add("show");
-
-
-        // CREATE EMAIL LINK
-
-        const mailtoLink =
-            "mailto:" + recipient +
-            "?subject=" + subject +
-            "&body=" + body;
-
-
-        // INFORM VISITOR BEFORE OPENING EMAIL APPLICATION
-
-        alert(
-            "THANK YOU FOR CONTACTING THREADED!\n\n" +
-            "Your email application will open with your inquiry already prepared.\n\n" +
-            "Recipient: " + recipient + "\n" +
-            "Subject: THREADED-Inquiry [" + inquiryNumber + "]\n\n" +
-            "Please click SEND in your email application to complete your submission."
-        );
-
-
-        // OPEN DEFAULT EMAIL APPLICATION
-
-        window.location.href = mailtoLink;
-
-    });
-
-</script>
-
-
-
-<!-- BOOTSTRAP JAVASCRIPT -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
+        });
+    </script>
 
 </body>
-
 </html>

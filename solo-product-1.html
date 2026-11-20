@@ -721,7 +721,7 @@
                     if (this.checked) {
                         const img = this.getAttribute('data-image');
                         const colorValue = this.value;
-                        const alt = `Don't Be Late Tee in ${colorValue}`;
+                        const alt = `Everyday Comfort Tee in ${colorValue}`;
                         updateProductDisplay(img, alt, null);
                     }
                 });
@@ -750,14 +750,26 @@
                     const selectedSize = selectedSizeRadio ? selectedSizeRadio.value : 'S';
                     const qty = quantityInput.value;
 
-                    orderButton.textContent = "ADDED!";
-                    orderButton.style.backgroundColor = "var(--product-green)";
-                    orderFeedback.textContent = `Success! ${qty}x Don't Be Late Tee (${selectedColor}, Size: ${selectedSize}) added to your cart.`;
-
+                    const titleElement = document.querySelector('h1');
+					const productName = titleElement ? titleElement.textContent.trim() : "Do Good Work Tee";
+				
                     setTimeout(() => {
                         orderButton.textContent = "ORDER NOW";
                         orderButton.style.backgroundColor = "";
                     }, 2500);
+					
+					const email = 'orders@examplewebsite142.com';
+  
+					const subject = 'T-Shirt Order: ${productName}';
+					const body = 'Good day!\r\n\r\nI'd like to place an order for the following products:\r\n' +
+					'- T-Shirt: ${productName}\r\n' +
+					'- Size: ${selectedSize}\r	\n' +
+					'- Quantity: ${qty}\r\n\r\n' +
+					'Please let me know the shipping and payment details.\r\n\r\nThank you!`;
+
+					const mailtoLink = 'mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}';
+					window.location.href = mailtoLink;
+					
                 });
             }
         });

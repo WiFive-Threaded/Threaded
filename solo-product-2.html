@@ -771,17 +771,17 @@
 
 				const recipient = 'orders@examplewebsite142.com';
 				const subject = 'Order Inquiry: ${productName} (${selectedColor} - ${selectedSize})';
-				const body = 'Good day!\n\n' +
-                   'I would like to place an order for the following products:\n' +
-                   '• Product: ${productName}\n' +
-                   '• Color: ${selectedColor}\n' +
-                   '• Size: ${selectedSize}\n' +
-                   '• Quantity: ${quantity}\n\n' +
-                   'Here are the contact details:\n' +
-                   'Full Name: \n' +
-                   'Shipping Address: \n' +
-                   'Contact Number: \n\n' +
-                   'Thank you!';
+				const body = `Good day!\n\n` +
+                   `I would like to place an order for the following products:\n` +
+                   `• Product: ${productName}\n` +
+                   `• Color: ${selectedColor}\n` +
+                   `• Size: ${selectedSize}\n` +
+                   `• Quantity: ${quantity}\n\n` +
+                   `Here are the contact details:\n` +
+                   `Full Name: \n` +
+                   `Shipping Address: \n` +
+                   `Contact Number: \n\n` +
+                   `Thank you!`;
 
       			window.location.href = 'mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}';
                 });

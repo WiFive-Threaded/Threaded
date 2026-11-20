@@ -349,15 +349,24 @@
             gap: 24px;
         }
 
-        .product-page .related-product-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            color: var(--product-dark);
-            text-decoration: none;
-            font-weight: 700;
-        }
+		.product-page .related-product-link {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    gap: 10px;
+		    color: var(--product-dark);
+		    text-decoration: underline; 
+		    font-weight: 700 !important;
+		    transition: color 0.3s ease;
+		}
+		
+		.product-page .related-product-link:hover {
+		    color: var(--product-brown); 
+		}
+		.product-page .related-product-link span {
+		    font-weight: 700 !important;
+		    font-family: 'Lexend', sans-serif;
+		}
 
         .product-page .related-product-image {
             width: 100%;

@@ -594,7 +594,7 @@
                                 <input type="number" id="quantity" value="1" min="1" max="99" step="1" aria-label="Quantity">
                                 <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
                             </div>
-								<a href="#" id="orderButton" class="order-button">
+								<a href="orders@examplewebsite142.com" id="orderButton" class="order-button">
 								ORDER NOW
 								</a>
                         </div>
@@ -771,42 +771,22 @@
 				const titleElement = document.querySelector('h1');
 				const productName = titleElement ? titleElement.textContent.trim() : "Don't Be Late Tee";
 
-	<script>
-    	window.addEventListener('load', function () {
-      		var btn = document.getElementById('orderButton');
-      		if (!btn) return;
+				const recipient = `orders@examplewebsite142.com`;
+				const subject = `Order Inquiry: ` + productName + ` (` + selectedColor + ` - ` + selectedSize + `)`;
+				const body = `Good day!\n\n` +
+                   `I would like to place an order for the following products:\n` +
+                   `• Product: ${productName}\n` +
+                   `• Color: ${selectedColor}\n` +
+                   `• Size: ${selectedSize}\n` +
+                   `• Quantity: ${quantity}\n\n` +
+                   `Here are the contact details:\n` +
+                   `Full Name: \n` +
+                   `Shipping Address: \n` +
+                   `Contact Number: \n\n` +
+                   `Thank you!`;
 
-      		btn.onclick = function (e) {
-        		e.preventDefault();
-
-       			var productName = document.querySelector('h1') ? document.querySelector('h1').textContent.trim() : "Don't Be Late Tee";
-        		var price = "PHP 499";
-
-        		var checked = document.querySelectorAll('input:checked');
-        		var color = checked[0] ? (checked[0].value !== 'on' ? checked[0].value : checked[0].parentElement.textContent.trim()) : "White";
-        		var size = checked[1] ? (checked[1].value !== 'on' ? checked[1].value : checked[1].parentElement.textContent.trim()) : "S";
-
-        		var qtyEl = document.querySelector('input[type="number"], input[type="text"], #quantity');
-        		var qty = (qtyEl && qtyEl.value) ? qtyEl.value : "1";
-
-        		var to = 'orders@examplewebsite142.com';
-        		var subject = 'Order Inquiry: ' + productName + ' (' + color + ' - ' + size + ')';
-        		var body = 'Good day!\n\n' +
-                   'I would like to place an order for the following t-shirt:\n' +
-                   '- Product: ' + productName + '\n' +
-                   '- Price: ' + price + '\n' +
-                   '- Color: ' + color + '\n' +
-                   '- Size: ' + size + '\n' +
-                   '- Quantity: ' + qty + '\n\n' +
-                   'My details:\n' +
-                   'Full Name: \n' +
-                   'Shipping Address: \n' +
-                   'Contact Number: \n\n' +
-                   'Thank you!';
-
-        window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      };
-    });
+      			window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+				});
   </script>
 </body>
 

@@ -336,6 +336,9 @@
         }
 
         .product-page .order-button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
             flex: 1;
             height: 48px;
             background-color: var(--product-brown);
@@ -575,7 +578,9 @@
                                 <input type="number" id="quantity" value="1" min="1" max="99" step="1" aria-label="Quantity">
                                 <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
                             </div>
-                            <button type="button" id="orderButton" class="order-button">ORDER NOW</button>
+								<a href="mailto:orders@:examplewebsite142.com" id="orderButton" class="order-button">
+								ORDER NOW
+								</a>
                         </div>
                         <p id="orderFeedback" class="order-feedback" role="status" aria-live="polite"></p>
                     </div>

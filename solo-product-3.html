@@ -336,9 +336,6 @@
         }
 
         .product-page .order-button {
-            display: inline-flex;
-			align-items: center;
-			justify-content: center;
             flex: 1;
             height: 48px;
             background-color: var(--product-brown);
@@ -431,36 +428,42 @@
             background-color: var(--product-white);
         }
 
-        /* responsive breakpoints */
         @media (max-width: 991.98px) {
             .product-page .product-layout-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 576px) {
-            .product-page .gallery-layout-grid {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            .product-page .site-header {
+                height: 80px !important;
+                padding: 0 !important;
             }
-            .product-page .thumbnail-list {
+            .product-page .site-header .container-fluid {
                 flex-direction: row;
-                justify-content: center;
-                gap: 8px;
-                height: auto;
+                flex-wrap: nowrap;
+                padding: 0 10px !important;
             }
-            .product-page .thumbnail-button {
-                height: 65px;
-                max-width: 65px;
+            .product-page .site-header .logo img {
+                width: 45px !important;
+                height: 45px !important;
             }
-            .product-page .main-product-image-box {
-                height: 350px;
+            .product-page .site-header .logo-text {
+                font-size: 1.2rem !important;
             }
-            .product-page .quantity-order-row {
-                flex-direction: column;
+            .product-page .site-header nav ul {
+                gap: 10px;
             }
-            .product-page .quantity-control {
-                width: 100%;
+            .product-page .nav-icon {
+                width: 25px !important;
+                height: 25px !important;
             }
+            .product-page .site-header a {
+                font-size: 0.7rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
         }
     </style>
 </head>
@@ -506,26 +509,26 @@
 
                 <!-- the left column gallery -->
                 <div class="gallery-layout-grid">
-                    <!-- thumbnails -->
-                    <div class="thumbnail-list">
-                        <button type="button" class="thumbnail-button active" data-image="img/DoGoodWork-white-tee" data-alt="Do Good Work Tee in White" aria-label="View white shirt">
-                            <img src="img/DoGoodWork-white-tee" alt="White Tee thumbnail">
-                        </button>
-                        <button type="button" class="thumbnail-button" data-image="img/DoGoodWork-black-tee" data-alt="Do Good Work Tee in Black" aria-label="View black shirt">
-                            <img src="img/DoGoodWork-black-tee" alt="Black Tee thumbnail">
-                        </button>
-                        <button type="button" class="thumbnail-button" data-image="img/DoGoodWork-gray-tee" data-alt="Do Good Work Tee in Gray" aria-label="View gray shirt">
-                            <img src="img/DoGoodWork-gray-tee" alt="Gray Tee thumbnail">
-                        </button>
-                        <button type="button" class="thumbnail-button" data-image="img/DoGoodWork-beige-tee" data-alt="Do Good Work Tee in Beige" aria-label="View beige shirt">
-                            <img src="img/DoGoodWork-beige-tee" alt="Beige Tee thumbnail">
-                        </button>
-                    </div>
-
-                    <!-- main display -->
-                    <div class="main-product-image-box shadow-sm">
-                        <img id="mainProductImage" src="img/DoGoodWork-white-tee" alt="Do Good Work Tee in White">
-                    </div>
+					<!-- thumbnails -->
+					<div class="thumbnail-list">
+					    <button type="button" class="thumbnail-button active" data-image="img/DoGoodWork-white-tee" data-alt="Do Good Work Tee in White" aria-label="View white shirt">
+					        <img src="img/DoGoodWork-white-tee" alt="White Tee thumbnail">
+					    </button>
+					    <button type="button" class="thumbnail-button" data-image="img/DoGoodWork-black-tee" data-alt="Do Good Work Tee in Black" aria-label="View black shirt">
+					        <img src="img/DoGoodWork-black-tee" alt="Black Tee thumbnail">
+					    </button>
+					    <button type="button" class="thumbnail-button" data-image="img/DoGoodWork-gray-tee" data-alt="Do Good Work Tee in Gray" aria-label="View gray shirt">
+					        <img src="img/DoGoodWork-gray-tee" alt="Gray Tee thumbnail">
+					    </button>
+					    <button type="button" class="thumbnail-button" data-image="img/DoGoodWork-beige-tee" data-alt="Do Good Work Tee in Beige" aria-label="View beige shirt">
+					        <img src="img/DoGoodWork-beige-tee" alt="Beige Tee thumbnail">
+					    </button>
+					</div>
+					
+					<!-- main display -->
+					<div class="main-product-image-box shadow-sm">
+					    <img id="mainProductImage" src="img/DoGoodWork-white-tee" alt="Do Good Work Tee in White">
+					</div>
                 </div>
 
                 <!-- right cloumn that displays product details -->
@@ -533,25 +536,25 @@
                     <h1 class="product-heading">Do Good Work Tee</h1>
                     <p class="product-cost">PHP 499</p>
                     <p class="product-description">
-                        A charming piece of encouragement and simplicity. The Do Good Work Tee's humble design cheers us on through comfort and fashion.
+                        A statement piece displaying comfort through the walks of life. The Everyday Comfort Tee clever design gives value to the way we live but it style.
                     </p>
 
                     <!-- square shaped swatches for color selection -->
                     <div class="mb-3">
                         <span class="option-label">Color</span>
-                        <div class="color-options">
-                            <input type="radio" name="color" id="color-white" value="White" data-image="img/DoGoodWork-white-tee" checked>
-                            <label for="color-white" class="color-swatch white-swatch" title="White"><span class="visually-hidden">White</span></label>
-
-                            <input type="radio" name="color" id="color-black" value="Black" data-image="img/DoGoodWork-black-tee">
-                            <label for="color-black" class="color-swatch black-swatch" title="Black"><span class="visually-hidden">Black</span></label>
-
-                            <input type="radio" name="color" id="color-gray" value="Gray" data-image="img/DoGoodWork-gray-tee">
-                            <label for="color-gray" class="color-swatch gray-swatch" title="Gray"><span class="visually-hidden">Gray</span></label>
-
-                            <input type="radio" name="color" id="color-beige" value="Beige" data-image="img/DoGoodWork-beige-tee">
-                            <label for="color-beige" class="color-swatch beige-swatch" title="Beige"><span class="visually-hidden">Beige</span></label>
-                        </div>
+						<div class="color-options">
+						    <input type="radio" name="color" id="color-white" value="White" data-image="img/DoGoodWork-white-tee" checked>
+						    <label for="color-white" class="color-swatch white-swatch" title="White"><span class="visually-hidden">White</span></label>
+						
+						    <input type="radio" name="color" id="color-black" value="Black" data-image="img/DoGoodWork-black-tee">
+						    <label for="color-black" class="color-swatch black-swatch" title="Black"><span class="visually-hidden">Black</span></label>
+						
+						    <input type="radio" name="color" id="color-gray" value="Gray" data-image="img/DoGoodWork-gray-tee">
+						    <label for="color-gray" class="color-swatch gray-swatch" title="Gray"><span class="visually-hidden">Gray</span></label>
+						
+						    <input type="radio" name="color" id="color-beige" value="Beige" data-image="img/DoGoodWork-beige-tee">
+						    <label for="color-beige" class="color-swatch beige-swatch" title="Beige"><span class="visually-hidden">Beige</span></label>
+						</div>
                     </div>
 
                     <!-- SIZE SELECTION -->
@@ -578,9 +581,7 @@
                                 <input type="number" id="quantity" value="1" min="1" max="99" step="1" aria-label="Quantity">
                                 <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
                             </div>
-                            	<a href="mailto:orders@:examplewebsite142.com" id="orderButton" class="order-button">
-								ORDER NOW
-								</a>
+                            <button type="button" id="orderButton" class="order-button">ORDER NOW</button>
                         </div>
                         <p id="orderFeedback" class="order-feedback" role="status" aria-live="polite"></p>
                     </div>
@@ -592,16 +593,16 @@
             <section class="shop-more-section px-4">
                 <div class="container">
                     <h2 class="shop-more-title">SHOP FOR MORE</h2>
-                    <div class="related-products-grid">
-                        <a href="solo-product-1.html" class="related-product-link">
-                            <img src="img/dont-be-late-tee.png" alt="Don't Be Late Tee" class="related-product-image">
-                            <span>Don't Be Late Tee</span>
-                        </a>
-                        <a href="solo-product-2.html" class="related-product-link">
-                            <img src="img/everyday-comfort-tee.png" alt="Everyday Comfort Tee" class="related-product-image">
-                            <span>Everyday Comfort Tee</span>
-                        </a>
-                    </div>
+                   <div class="related-products-grid">
+					    <a href="solo-product-1.html" class="related-product-link">
+					        <img src="img/DontBeLate-white-tee" alt="Don't Be Late Tee" class="related-product-image">
+					        <span>Don't Be Late Tee</span>
+					    </a>
+					    <a href="solo-product-2.html" class="related-product-link">
+					        <img src="img/EverydayComfort-white-tee" alt="Everyday Comfort Tee" class="related-product-image">
+					        <span>Everyday Comfort Tee</span>
+					    </a>
+					</div>
                 </div>
             </section>
         </div>
@@ -659,7 +660,7 @@
             </div>
         </div>
     </footer>
-
+	
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

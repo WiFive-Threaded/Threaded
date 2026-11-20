@@ -769,8 +769,8 @@
 				const titleElement = document.querySelector('h1');
 				const productName = titleElement ? titleElement.textContent.trim() : "Don't Be Late Tee";
 
-				const recipient = 'orders@examplewebsite142.com';
-				const subject = 'Order Inquiry: ${productName} (${selectedColor} - ${selectedSize})';
+				const recipient = `orders@examplewebsite142.com`;
+				const subject = `Order Inquiry: ` + productName + ` (` + selectedColor + ` - ` + selectedSize + `)`;
 				const body = `Good day!\n\n` +
                    `I would like to place an order for the following products:\n` +
                    `• Product: ${productName}\n` +
@@ -783,7 +783,7 @@
                    `Contact Number: \n\n` +
                    `Thank you!`;
 
-      			window.location.href = 'mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}';
+      			window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 				});
             }
         });

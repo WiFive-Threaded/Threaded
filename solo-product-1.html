@@ -758,23 +758,35 @@
             }
 
             if (orderButton && quantityInput && orderFeedback) {
-                orderButton.addEventListener('click', function () {
-                    const selectedColorRadio = document.querySelector('input[name="color"]:checked');
-                    const selectedSizeRadio = document.querySelector('input[name="size"]:checked');
-                    
-                    const selectedColor = selectedColorRadio ? selectedColorRadio.value : 'Default';
-                    const selectedSize = selectedSizeRadio ? selectedSizeRadio.value : 'S';
-                    const qty = quantityInput.value;
+				orderButton.addEventListener('click', function (event) {
+				event.preventDefault();
 
-                    orderButton.textContent = "ADDED!";
-                    orderButton.style.backgroundColor = "var(--product-green)";
-                    orderFeedback.textContent = `Success! ${qty}x Don't Be Late Tee (${selectedColor}, Size: ${selectedSize}) added to your cart.`;
+				const selectedColorRadio = document.querySelector('input[name="color"]:checked');
+				const selectedSizeRadio = document.querySelector('input[name="size"]:checked');
+        
+				const selectedColor = selectedColorRadio ? selectedColorRadio.value : 'Default';
+				const selectedSize = selectedSizeRadio ? selectedSizeRadio.value : 'S';
+				const qty = quantityInput.value;
 
-                    setTimeout(() => {
-                        orderButton.textContent = "ORDER NOW";
-                        orderButton.style.backgroundColor = "";
-                    }, 2500);
-                });
+				const titleElement = document.querySelector('h1');
+				const productName = titleElement ? titleElement.textContent.trim() : "Don't Be Late Tee";
+
+				const recipient = 'orders@examplewebsite142.com';
+				const subject = 'Order Inquiry: ${productName} (${selectedColor} - ${selectedSize})';
+				const body = 'Good day!\n\n' +
+                   'I would like to place an order for the following products:\n' +
+                   '• Product: ${productName}\n' +
+                   '• Color: ${selectedColor}\n' +
+                   '• Size: ${selectedSize}\n' +
+                   '• Quantity: ${quantity}\n\n' +
+                   'Here are the contact details:\n' +
+                   'Full Name: \n' +
+                   'Shipping Address: \n' +
+                   'Contact Number: \n\n' +
+                   'Thank you!';
+
+      			window.location.href = 'mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}';
+				});
             }
         });
     </script>

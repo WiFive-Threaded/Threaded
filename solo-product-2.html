@@ -660,7 +660,7 @@
 
     <!-- product interactivity java script-->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+       document.addEventListener('DOMContentLoaded', function () {
             const mainImage = document.getElementById('mainProductImage');
             const thumbnailButtons = document.querySelectorAll('.thumbnail-button');
             const colorRadios = document.querySelectorAll('input[name="color"]');
@@ -745,14 +745,26 @@
                     const selectedSize = selectedSizeRadio ? selectedSizeRadio.value : 'S';
                     const qty = quantityInput.value;
 
-                    orderButton.textContent = "ADDED!";
-                    orderButton.style.backgroundColor = "var(--product-green)";
-                    orderFeedback.textContent = `Success! ${qty}x Everyday Comfort Tee (${selectedColor}, Size: ${selectedSize}) added to your cart.`;
-
+                    const titleElement = document.querySelector('h1');
+					const productName = titleElement ? titleElement.textContent.trim() : "Everyday Comfort Tee";
+				
                     setTimeout(() => {
                         orderButton.textContent = "ORDER NOW";
                         orderButton.style.backgroundColor = "";
                     }, 2500);
+					
+					const email = 'orders@examplewebsite142.com';
+  
+					const subject = 'T-Shirt Order: ${productName}';
+					const body = 'Good day!\r\n\r\nI'd like to place an order for the following products:\r\n' +
+					'- T-Shirt: ${productName}\r\n' +
+					'- Size: ${selectedSize}\r	\n' +
+					'- Quantity: ${qty}\r\n\r\n' +
+					'Please let me know the shipping and payment details.\r\n\r\nThank you!`;
+
+					const mailtoLink = 'mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}';
+					window.location.href = mailtoLink;
+					
                 });
             }
         });

@@ -84,15 +84,19 @@
 		    height: 25px;
 		    object-fit: contain;
 		}
+
+		.product-page .logo-text {
+            font-size: 32px;
+        }
 		
 		.product-page .site-header a {
-		    color: #DCD7C9 !important;
+		    color: #DCD7C9;
 		    text-decoration: none;
 		    font-size: 20px;
 		}
 		
 		.product-page .site-footer a {
-		    color: #DCD7C9 !important;
+		    color: #DCD7C9;
 		    text-decoration: none;
 		}
 		
@@ -336,6 +340,9 @@
         }
 
         .product-page .order-button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
             flex: 1;
             height: 48px;
             background-color: var(--product-brown);
@@ -434,32 +441,38 @@
             }
         }
 
-        @media (max-width: 768px) {
+		@media (max-width: 768px) {
             .product-page .site-header {
-                height: 80px !important;
-                padding: 0 !important;
+                height: 80px;
+                padding: 0;
             }
-            .product-page .site-header .container-fluid {
+
+            .product-page .site-header .container {
                 flex-direction: row;
                 flex-wrap: nowrap;
-                padding: 0 10px !important;
+                padding: 0 10px;
             }
+
             .product-page .site-header .logo img {
-                width: 45px !important;
-                height: 45px !important;
+                width: 45px; 
+                height: 45px;
             }
+            
             .product-page .site-header .logo-text {
-                font-size: 1.2rem !important;
+                font-size: 1.2rem; 
             }
+
             .product-page .site-header nav ul {
                 gap: 10px;
             }
+
             .product-page .nav-icon {
-                width: 25px !important;
-                height: 25px !important;
+                width: 25px;
+                height: 25px;
             }
+
             .product-page .site-header a {
-                font-size: 0.7rem !important;
+                font-size: 0.7rem;
             }
         }
 
